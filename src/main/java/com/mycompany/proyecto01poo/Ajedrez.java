@@ -60,7 +60,7 @@ public class Ajedrez {
                 posicionAntigua = posicionActual;
             } else if (posicionAntigua != null) {
                 posicionNueva = posicionActual;
-                   // cambiarFichas(posicionAntigua, posicionNueva);
+                    //cambiarFichas(posicionAntigua, posicionNueva);
                     posicionNueva = null;
                     posicionAntigua = null;
                     //turnoMaquina();
@@ -75,24 +75,18 @@ public class Ajedrez {
         return true;
     }
     
-   private String getBotonPosicionString(Object boton) {
+    private String getBotonPosicionString(Object boton) {
 
         return null;
     }
-     /*
+    
     private void cambiarFichas(String posAntigua, String posNueva) {
-        cambiarEnString(posAntigua, posNueva);
-        cambiarEnPantalla(posAntigua, posNueva);
-
     }
+    
+
     
     private void cambiarEnString(String posAntigua, String posNueva) {
 
     }
 
-    private void cambiarEnPantalla(String posAntigua, String posNueva) {
-        boton(posNueva).setIcon(boton(posAntigua).getIcon());
-        boton(posAntigua).setIcon(null);
-    }
-    */
 }
