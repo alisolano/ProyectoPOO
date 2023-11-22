@@ -20,4 +20,8 @@ public class Reina extends Ficha {
     public String getRepresentation() {
         return nombre.equals("reinaNegro") ? "♛" : "♕";
     }
+    
+    public String getNombre() {
+        return "Reina";
+    }
 }

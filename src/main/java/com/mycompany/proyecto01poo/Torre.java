@@ -16,4 +16,8 @@ public class Torre extends Ficha {
     public String getRepresentation() {
         return nombre.equals("torreNegro") ? "♜" : "♖";
     }
+    
+    public String getNombre() {
+        return "Torre";
+    }
 }

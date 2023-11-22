@@ -6,9 +6,8 @@ package GUI;
 
 import javax.swing.ImageIcon;
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
@@ -19,7 +18,8 @@ public class VistaTablero extends javax.swing.JFrame {
     private JLabel casillaInicial = null;
     private JLabel casillaFinal = null;
     private Icon ficha;
-    private boolean turnoBlanco = true;
+    private Map<ImageIcon, String> nombreFichas = new HashMap<>();
+
     public VistaTablero() {
         initComponents();
         this.setSize(420,480);
@@ -2157,15 +2157,44 @@ public class VistaTablero extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void movimiento() {
-            // Lógica para mover la ficha a la casilla final
-            casillaFinal.setIcon(ficha); // Cambiar el icono de la casilla final
-            casillaInicial.setIcon(null); // Quitar el icono de la casilla inicial
-            // Restablecer variables
-            ficha = null;
-            casillaInicial = null;
-            casillaFinal = null;
+    private void inicializarNombresFichas() {
+        nombreFichas.put(torreNegro, "torreNegro");
+        nombreFichas.put(alfilBlanco, "alfilBlanco");
+        // Agrega el resto de las fichas según sea necesario
     }
+
+private void movimiento() {
+    if (ficha instanceof ImageIcon) {
+        ImageIcon icono = (ImageIcon) ficha;
+        String nombreFicha = obtenerNombreFicha(icono);
+        if (nombreFicha != null) {
+            System.out.println("Se está utilizando la ficha con nombre: " + nombreFicha);
+        } else {
+            System.out.println("No se encontró el nombre de la ficha.");
+        }
+    } else {
+        System.out.println("La ficha no es un ImageIcon.");
+    }
+
+    // Resto de la lógica del movimiento
+    casillaFinal.setIcon(ficha);
+    casillaInicial.setIcon(null);
+    ficha = null;
+    casillaInicial = null;
+    casillaFinal = null;
+}
+
+private String obtenerNombreFicha(ImageIcon icono) {
+    for (Map.Entry<ImageIcon, String> entry : nombreFichas.entrySet()) {
+        if (entry.getKey().getImage() == icono.getImage()) {
+            return entry.getValue();
+        }
+    }
+    return null;
+}
+
+
+
     private void jLabel20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel20MouseClicked
            // Verificar si es el primer click
         if (casillaInicial == null) {

@@ -13,6 +13,7 @@ public abstract class Ficha {
     public abstract boolean validarMovimiento(int casillaInicial, int casillaFinal);
     
     public abstract String getRepresentation();
+    public abstract String getNombre();
 }
 
 

@@ -88,5 +88,23 @@ public class Ajedrez {
     private void cambiarEnString(String posAntigua, String posNueva) {
 
     }
+    
+    private boolean validarMovimiento(int filaInicial, int columnaInicial, int filaFinal, int columnaFinal) {
+        Ficha ficha = tablero.obtenerFichaEnCoordenada(filaInicial, columnaInicial);
+        int casillaInicial = tablero.obtenerCasilla(filaInicial, columnaInicial);
+        int casillaFinal = tablero.obtenerCasilla(filaFinal, columnaFinal);
 
+  
+        return ficha != null && tablero.validarMovimiento(ficha, casillaInicial, casillaFinal);
+    }
+
+
+    
+    public void intentarRealizarMovimiento(int filaInicial, int columnaInicial, int filaFinal, int columnaFinal) {
+        if (validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal)) {
+            tablero.realizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        } else {
+            System.out.println("Movimiento no válido");
+        }
+    }
 }

@@ -17,5 +17,9 @@ public class Rey extends Ficha {
     public String getRepresentation() {
         return nombre.equals("reyNegro") ? "♚" : "♔";
     }
+    
+    public String getNombre() {
+        return "Rey";
+    }
 }
 

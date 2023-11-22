@@ -104,5 +104,54 @@ public class Tablero {
         }
     }
     
+    public static int obtenerCasilla(int fila, int columna) {
+        return fila * 8 + columna;
+    }
+    
+    public void moverFicha(int filaInicial, int columnaInicial, int filaFinal, int columnaFinal) {
+        // Obtener la ficha de la posición inicial
+        Ficha ficha = tablero[filaInicial][columnaInicial];
+
+        // Verificar si la posición final está ocupada
+        if (tablero[filaFinal][columnaFinal] != null) {
+            System.out.println("Error: La casilla final está ocupada");
+            return;
+        }
+
+        // Imprimir coordenadas antes del movimiento
+        System.out.println("Moviendo ficha desde: [" + filaInicial + "][" + columnaInicial + "]");
+
+        // Mover la ficha a la nueva posición
+        tablero[filaFinal][columnaFinal] = ficha;
+        tablero[filaInicial][columnaInicial] = null;
+
+        // Imprimir coordenadas después del movimiento
+        System.out.println("Hasta: [" + filaFinal + "][" + columnaFinal + "]");
+    }
+    
+    public Ficha obtenerFichaEnCoordenada(int fila, int columna) {
+        return tablero[fila][columna];
+    }
+    
+    public boolean validarMovimiento(Ficha ficha, int casillaInicial, int casillaFinal) {
+        if (ficha != null) {
+            return ficha.validarMovimiento(casillaInicial, casillaFinal);
+        }
+        return false; // Si no hay ficha en la casilla inicial, el movimiento no es válido
+    }
+    
+    public void realizarMovimiento(int filaInicial, int columnaInicial, int filaFinal, int columnaFinal) {
+        Ficha ficha = obtenerFichaEnCoordenada(filaInicial, columnaInicial);
+        int casillaInicial = obtenerCasilla(filaInicial, columnaInicial);
+        int casillaFinal = obtenerCasilla(filaFinal, columnaFinal);
+
+        if (ficha != null && validarMovimiento(ficha, casillaInicial, casillaFinal)) {
+            moverFicha(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            System.out.println("Ficha movida");
+        } else {
+            // El movimiento no es válido
+            System.out.println("Movimiento no válido");
+        }
+    }
     
 }

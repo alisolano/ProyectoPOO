@@ -19,6 +19,10 @@ public class Peon extends Ficha {
         return nombre.equals("peonNegro") ? "♟" : "♙";
     }
     
+    public String getNombre() {
+        return "Peon";
+    }
+    
 }
 
 
