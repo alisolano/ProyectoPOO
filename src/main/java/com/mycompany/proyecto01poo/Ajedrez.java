@@ -32,7 +32,7 @@ public class Ajedrez {
         this.tablero = new Tablero();
         tablero.iniciarTablero(fichaFactory);
         tablero.imprimirTablero();
-        VistaTablero vista = new VistaTablero();
+        VistaTablero vista = new VistaTablero("","");
         vista.setVisible(true);
     }
     
