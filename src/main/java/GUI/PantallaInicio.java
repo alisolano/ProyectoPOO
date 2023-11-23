@@ -44,14 +44,13 @@ public class PantallaInicio extends javax.swing.JFrame {
         setUndecorated(true);
         getContentPane().setLayout(null);
 
+        lblJugador1.setBackground(new java.awt.Color(0, 0, 0));
         lblJugador1.setFont(new java.awt.Font("Onyx", 0, 24)); // NOI18N
-        lblJugador1.setForeground(new java.awt.Color(255, 255, 255));
         lblJugador1.setText("Nombre del Jugador 1");
         getContentPane().add(lblJugador1);
         lblJugador1.setBounds(70, 50, 140, 27);
 
         lblJugador2.setFont(new java.awt.Font("Onyx", 0, 24)); // NOI18N
-        lblJugador2.setForeground(new java.awt.Color(255, 255, 255));
         lblJugador2.setText("Nombre del Jugador 2");
         getContentPane().add(lblJugador2);
         lblJugador2.setBounds(70, 110, 150, 20);
@@ -67,7 +66,7 @@ public class PantallaInicio extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnInicio);
-        btnInicio.setBounds(230, 170, 230, 25);
+        btnInicio.setBounds(230, 170, 230, 23);
 
         btnCerrar.setBackground(new java.awt.Color(153, 0, 0));
         btnCerrar.setText("X");
@@ -77,36 +76,31 @@ public class PantallaInicio extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnCerrar);
-        btnCerrar.setBounds(510, 0, 50, 25);
+        btnCerrar.setBounds(510, 0, 50, 23);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnInicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInicioActionPerformed
-      VistaTablero ir = new VistaTablero();
-        if(ValidarEspaciosVacios())
-      {
+     String Jugador1=txtJugador1.getText();
+     String Jugador2=txtJugador2.getText();
+     if(Jugador1.equals("")&&Jugador2.equals(""))
+     {
+         Jugador1="Jugador1";
+         Jugador2="Jugador2";
+     }
+        VistaTablero ir = new VistaTablero(Jugador1,Jugador2);
+       
           ir.setVisible(true);
-      }
-      else
-          JOptionPane.showMessageDialog(this,"Tiene que Ingresar el nombre de los 2 jugadores");
+      
+   
     }//GEN-LAST:event_btnInicioActionPerformed
 
     private void btnCerrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCerrarActionPerformed
 this.dispose();        // TODO add your handling code here:
     }//GEN-LAST:event_btnCerrarActionPerformed
 
-      public boolean ValidarEspaciosVacios(){
-    
-       if( txtJugador1.getText().isEmpty()||txtJugador2.getText().isEmpty())
-       {
-            return false;
-       }
-        return true;
-    
-   
-}
-    public static void main(String args[]) {
+   public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
@@ -120,13 +114,13 @@ this.dispose();        // TODO add your handling code here:
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(PantallaInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaTablero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(PantallaInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaTablero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(PantallaInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaTablero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(PantallaInicio.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VistaTablero.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
@@ -136,8 +130,7 @@ this.dispose();        // TODO add your handling code here:
                 new PantallaInicio().setVisible(true);
             }
         });
-    }
-    
+   }
     ImageIcon inicio= new ImageIcon("Imagenes/inicio.png");
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
