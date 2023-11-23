@@ -6,8 +6,6 @@ package GUI;
 
 import javax.swing.ImageIcon;
 import javax.swing.*;
-import java.util.HashMap;
-import java.util.Map;
 import com.mycompany.proyecto01poo.Ajedrez;
 import com.mycompany.proyecto01poo.Tablero;
 
@@ -20,7 +18,6 @@ public class VistaTablero extends javax.swing.JFrame {
     private JLabel casillaInicial = null;
     private JLabel casillaFinal = null;
     private Icon ficha;
-    private Map<ImageIcon, String> nombreFichas = new HashMap<>();
 
     public VistaTablero() {
         initComponents();
@@ -2188,46 +2185,22 @@ public class VistaTablero extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void inicializarNombresFichas() {
-        nombreFichas.put(torreNegro, "torreNegro");
-        nombreFichas.put(alfilBlanco, "alfilBlanco");
-        // Agrega el resto de las fichas según sea necesario
-    }
-
 public int filaInicial;
 public int columnaInicial;
 public int filaFinal;
 public int columnaFinal;
     
 private void movimiento() {
-    if (ficha instanceof ImageIcon) {
-        ImageIcon icono = (ImageIcon) ficha;
-        String nombreFicha = obtenerNombreFicha(icono);
-        if (nombreFicha != null) {
-            System.out.println("Se está utilizando la ficha con nombre: " + nombreFicha);
-        } else {
-            System.out.println("No se encontró el nombre de la ficha.");
-        }
-    } else {
-        System.out.println("La ficha no es un ImageIcon.");
-    }
     asignarInicial();
     // Resto de la lógica del movimiento
 
+    /*
     casillaFinal.setIcon(ficha);
     casillaInicial.setIcon(null);
     ficha = null;
     casillaInicial = null;
     casillaFinal = null;
-}
-
-private String obtenerNombreFicha(ImageIcon icono) {
-    for (Map.Entry<ImageIcon, String> entry : nombreFichas.entrySet()) {
-        if (entry.getKey().getImage() == icono.getImage()) {
-            return entry.getValue();
-        }
-    }
-    return null;
+    */
 }
 
 
@@ -2624,389 +2597,469 @@ public void asignarInicial() {
         if (casillaFinal == jLabel20) {
             filaFinal = 0;
             columnaFinal = 0;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         } 
         
         if (casillaFinal == jLabel1) {
             filaFinal = 0;
             columnaFinal = 1;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel3) {
             filaFinal = 0;
             columnaFinal = 2;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         } 
         
         if (casillaFinal == jLabel4) {
             filaFinal = 0;
             columnaFinal = 3;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         } 
         
         if (casillaFinal == jLabel5) {
             filaFinal = 0;
             columnaFinal = 4;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         } 
         
         if (casillaFinal == jLabel6) {
             filaFinal = 0;
             columnaFinal = 5;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         } 
         
         if (casillaFinal == jLabel7) {
             filaFinal = 0;
             columnaFinal = 6;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         } 
         
         if (casillaFinal == jLabel8) {
             filaFinal = 0;
             columnaFinal = 7;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel2) {
             filaFinal = 1;
             columnaFinal = 0;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         } 
         
         if (casillaFinal == jLabel21) {
             filaFinal = 1;
             columnaFinal = 1;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel9) {
             filaFinal = 1;
             columnaFinal = 2;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel10) {
             filaFinal = 1;
             columnaFinal = 3;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel11) {
             filaFinal = 1;
             columnaFinal = 4;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel12) {
             filaFinal = 1;
             columnaFinal = 5;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel13) {
             filaFinal = 1;
             columnaFinal = 6;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel14) {
             filaFinal = 1;
             columnaFinal = 7;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel30) {
             filaFinal = 2;
             columnaFinal = 0;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel34) {
             filaFinal = 2;
-            columnaFinal = 1;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            columnaFinal = 1; 
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel35) {
             filaFinal = 2;
             columnaFinal = 2;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel36) {
             filaFinal = 2;
             columnaFinal = 3;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel40) {
             filaFinal = 2;
             columnaFinal = 4;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel38) {
             filaFinal = 2;
             columnaFinal = 5;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel39) {
             filaFinal = 2;
             columnaFinal = 6;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel41) {
             filaFinal = 2;
             columnaFinal = 7;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel44) {
             filaFinal = 3;
             columnaFinal = 0;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel43) {
             filaFinal = 3;
             columnaFinal = 1;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel37) {
             filaFinal = 3;
             columnaFinal = 2;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel51) {
             filaFinal = 3;
             columnaFinal = 3;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel46) {
             filaFinal = 3;
             columnaFinal = 4;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel47) {
             filaFinal = 3;
             columnaFinal = 5;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel42) {
             filaFinal = 3;
             columnaFinal = 6;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel48) {
             filaFinal = 3;
             columnaFinal = 7;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel45) {
             filaFinal = 4;
             columnaFinal = 0;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel49) {
             filaFinal = 4;
             columnaFinal = 1;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel50) {
             filaFinal = 4;
             columnaFinal = 2;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel52) {
             filaFinal = 4;
             columnaFinal = 3;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel53) {
             filaFinal = 4;
             columnaFinal = 4;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel54) {
             filaFinal = 4;
             columnaFinal = 5;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel55) {
             filaFinal = 4;
             columnaFinal = 6;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel56) {
             filaFinal = 4;
             columnaFinal = 7;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel57) {
             filaFinal = 5;
             columnaFinal = 0;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel58) {
             filaFinal = 5;
             columnaFinal = 1;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel59) {
             filaFinal = 5;
             columnaFinal = 2;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel60) {
             filaFinal = 5;
             columnaFinal = 3;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel61) {
             filaFinal = 5;
             columnaFinal = 4;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+           //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel62) {
             filaFinal = 5;
             columnaFinal = 5;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel63) {
             filaFinal = 5;
             columnaFinal = 6;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel64) {
             filaFinal = 5;
             columnaFinal = 7;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel25) {
             filaFinal = 6;
             columnaFinal = 0;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel26) {
             filaFinal = 6;
             columnaFinal = 1;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel27) {
             filaFinal = 6;
             columnaFinal = 2;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel28) {
             filaFinal = 6;
             columnaFinal = 3;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel33) {
             filaFinal = 6;
             columnaFinal = 4;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel29) {
             filaFinal = 6;
             columnaFinal = 5;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel32) {
             filaFinal = 6;
             columnaFinal = 6;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel31) {
             filaFinal = 6;
             columnaFinal = 7;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel15) {
             filaFinal = 7;
             columnaFinal = 0;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel22) {
             filaFinal = 7;
             columnaFinal = 1;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel17) {
             filaFinal = 7;
             columnaFinal = 2;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel23) {
             filaFinal = 7;
             columnaFinal = 3;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel19) {
             filaFinal = 7;
             columnaFinal = 4;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel24) {
             filaFinal = 7;
             columnaFinal = 5;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel18) {
             filaFinal = 7;
             columnaFinal = 6;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
         if (casillaFinal == jLabel16) {
             filaFinal = 7;
             columnaFinal = 7;
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            //ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
         }
         
     
-    } 
+    }
+    
+    private void validarMovimiento(int filaInicial, int columnaInicial, int filaFinal, int columnaFinal){
+        Ajedrez ajedrez = Ajedrez.obtenerInstancia();
+        if(ajedrez.validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal)){
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            casillaFinal.setIcon(ficha);
+            casillaInicial.setIcon(null);
+            ficha = null;
+            casillaInicial = null;
+            casillaFinal = null;
+        } else{
+            System.out.println("Movimiento no valido");
+            ficha = null;
+            casillaInicial = null;
+            casillaFinal = null;
+            }
+    }
 
 
     private void jLabel20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel20MouseClicked

@@ -50,7 +50,7 @@ public class Ajedrez {
 
    
     
-    private boolean validarMovimiento(int filaInicial, int columnaInicial, int filaFinal, int columnaFinal) {
+    public boolean validarMovimiento(int filaInicial, int columnaInicial, int filaFinal, int columnaFinal) {
         Ficha ficha = tablero.obtenerFichaEnCoordenada(filaInicial, columnaInicial);
         int casillaInicial = tablero.obtenerCasilla(filaInicial, columnaInicial);
         int casillaFinal = tablero.obtenerCasilla(filaFinal, columnaFinal);
