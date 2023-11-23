@@ -56,11 +56,16 @@ public class Ajedrez {
         return ficha != null && tablero.validarMovimiento(ficha, casillaInicial, casillaFinal)&& tablero.esTurnoCorrecto(ficha)
                         && tablero.casillasIntermediasVacias(filaInicial, columnaInicial, filaFinal, columnaFinal);
     }
+    
+    public boolean validarCaptura(int filaInicial, int columnaInicial, int filaFinal, int columnaFinal){
+        return tablero.capturaRegular(filaInicial, columnaInicial, filaFinal, columnaFinal);
+    }
 
 
     
     public void intentarRealizarMovimiento(int filaInicial, int columnaInicial, int filaFinal, int columnaFinal) {
         if (validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal)) {
+            tablero.capturaRegular(filaInicial, columnaInicial, filaFinal, columnaFinal);
             tablero.realizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
             tablero.cambiarTurno();
             tablero.imprimirTablero();
@@ -70,4 +75,6 @@ public class Ajedrez {
             return;
         }
     }
+    
+    
 }

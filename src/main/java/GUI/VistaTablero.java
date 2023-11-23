@@ -2233,6 +2233,12 @@ private void movimiento() {
             javax.swing.JOptionPane.showMessageDialog((null), mensaje, "Movimiento inválido. Por favor repetir la jugada." + titulo, javax.swing.JOptionPane.INFORMATION_MESSAGE);
 
     }
+    
+    public static void CapturaBox(String mensaje, String titulo) {
+            //Esta funcion es para que salte un mensaje de error en caso de que se falle algo
+            javax.swing.JOptionPane.showMessageDialog((null), mensaje, "¡Captura!" + titulo, javax.swing.JOptionPane.INFORMATION_MESSAGE);
+
+    }
 
 public void asignarInicial() {
         if (casillaInicial == jLabel20) {
@@ -3076,7 +3082,15 @@ public void asignarInicial() {
     
     private void validarMovimiento(int filaInicial, int columnaInicial, int filaFinal, int columnaFinal){
         Ajedrez ajedrez = Ajedrez.obtenerInstancia();
-        if(ajedrez.validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal)){
+        if(ajedrez.validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal) && ajedrez.validarCaptura(filaInicial, columnaInicial, filaFinal, columnaFinal)){
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            casillaFinal.setIcon(ficha);
+            casillaInicial.setIcon(null);
+            ficha = null;
+            casillaInicial = null;
+            casillaFinal = null;
+            CapturaBox("¡Captura!","Pantalla emergente");
+        } else if(ajedrez.validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal)){
             ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
             casillaFinal.setIcon(ficha);
             casillaInicial.setIcon(null);
@@ -3084,14 +3098,15 @@ public void asignarInicial() {
             casillaInicial = null;
             casillaFinal = null;
             SuccessBox("¡Movimiento hecho!","Pantalla emergente");
-        } else{
+        }else{
             System.out.println("Movimiento no valido");
             ficha = null;
             casillaInicial = null;
             casillaFinal = null;
             FailBox("Movimiento inválido. Por favor repetir la jugada.","Pantalla emergente");
             }
-    }
+        }
+    
 
 
     private void jLabel20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel20MouseClicked

@@ -208,16 +208,6 @@ public class Tablero {
     
     public void realizarMovimiento(int filaInicial, int columnaInicial, int filaFinal, int columnaFinal) {
         Ficha ficha = obtenerFichaEnCoordenada(filaInicial, columnaInicial);
-        int equipoEnemigo;// 0 para blanco, 1 para negro
-        if(fichasBlancas.contains(ficha)){// si ficha es blanca
-            equipoEnemigo = 1;// enemigo es negro
-        } else {
-            equipoEnemigo = 0;// si ficha es negra, enemigo es blanco
-        }
-        Ficha fichaEnemiga = obtenerFichaEnCoordenada(filaFinal, columnaFinal);
-        if (fichaEnemiga != null){
-            capturaRegular(ficha, fichaEnemiga, equipoEnemigo, filaFinal, columnaFinal);
-        }
         int casillaInicial = obtenerCasilla(filaInicial, columnaInicial);
         int casillaFinal = obtenerCasilla(filaFinal, columnaFinal);
 
@@ -230,7 +220,16 @@ public class Tablero {
         }
     }
     
-    private boolean capturaRegular(Ficha ficha, Ficha fichaFinal, int equipoEnemigo, int filaFinal, int columnaFinal){
+    public boolean capturaRegular(int filaInicial, int columnaInicial, int filaFinal, int columnaFinal){
+        Ficha ficha = obtenerFichaEnCoordenada(filaInicial, columnaInicial);
+        Ficha fichaFinal = obtenerFichaEnCoordenada(filaFinal, columnaFinal);
+        int equipoEnemigo;// 0 para blanco, 1 para negro
+        if(fichasBlancas.contains(ficha)){// si ficha es blanca
+            equipoEnemigo = 1;// enemigo es negro
+        } else {
+            equipoEnemigo = 0;// si ficha es negra, enemigo es blanco
+        }
+        
         if (equipoEnemigo == 0){
             if (fichasBlancas.contains(fichaFinal)){
                 tablero[filaFinal][columnaFinal] = null;
@@ -249,5 +248,5 @@ public class Tablero {
             }
         }
     }
-    
+     
 }
