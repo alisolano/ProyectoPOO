@@ -146,6 +146,10 @@ public class Tablero {
     public Ficha obtenerFichaEnCoordenada(int fila, int columna) {
         return tablero[fila][columna];
     }
+    
+    /*public void capturaRegular(int filaFinal, int casillaFinal){
+        if (ficha != null && esTurnoCorrecto(ficha)){
+    }*/
     public boolean casillasIntermediasVacias(int filaInicial, int columnaInicial, int filaFinal, int columnaFinal) {
         Ficha ficha = obtenerFichaEnCoordenada(filaInicial, columnaInicial);
         if (!caballos.contains(ficha)){
@@ -204,6 +208,16 @@ public class Tablero {
     
     public void realizarMovimiento(int filaInicial, int columnaInicial, int filaFinal, int columnaFinal) {
         Ficha ficha = obtenerFichaEnCoordenada(filaInicial, columnaInicial);
+        int equipoEnemigo;// 0 para blanco, 1 para negro
+        if(fichasBlancas.contains(ficha)){// si ficha es blanca
+            equipoEnemigo = 1;// enemigo es negro
+        } else {
+            equipoEnemigo = 0;// si ficha es negra, enemigo es blanco
+        }
+        Ficha fichaEnemiga = obtenerFichaEnCoordenada(filaFinal, columnaFinal);
+        if (fichaEnemiga != null){
+            capturaRegular(ficha, fichaEnemiga, equipoEnemigo, filaFinal, columnaFinal);
+        }
         int casillaInicial = obtenerCasilla(filaInicial, columnaInicial);
         int casillaFinal = obtenerCasilla(filaFinal, columnaFinal);
 
@@ -213,6 +227,26 @@ public class Tablero {
         } else {
             // El movimiento no es válido
             System.out.println("Movimiento no válido");
+        }
+    }
+    
+    private boolean capturaRegular(Ficha ficha, Ficha fichaFinal, int equipoEnemigo, int filaFinal, int columnaFinal){
+        if (equipoEnemigo == 0){
+            if (fichasBlancas.contains(fichaFinal)){
+                tablero[filaFinal][columnaFinal] = null;
+                System.out.println("Captura negro a blanco");
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            if (fichasNegras.contains(fichaFinal)){
+                tablero[filaFinal][columnaFinal] = null;
+                System.out.println("Captura blanco a negro");
+                return true;
+            } else {
+                return false;
+            }
         }
     }
     
