@@ -1,12 +1,20 @@
 package com.mycompany.proyecto01poo;
 
+import java.util.ArrayList;
+
 public class Tablero {
     
     
    private Ficha[][] tablero;
+   private boolean turnoBlancas;
+   private ArrayList<Ficha> fichasBlancas;
+   private ArrayList<Ficha> fichasNegras;
 
     public Tablero() {
         tablero = new Ficha[8][8];
+        this.fichasBlancas = new ArrayList<>();
+        this.fichasNegras = new ArrayList<>();
+        turnoBlancas = true;
     }
     
    void iniciarTablero(Factory fichaFactory) {
@@ -20,27 +28,40 @@ public class Tablero {
         
         Ficha peonNegro = FichaFactory.crearFichaPeon("peonNegro");
         Ficha peonBlanco = FichaFactory.crearFichaPeon("peonBlanco");
-        
+        fichasNegras.add(peonNegro);
+        fichasBlancas.add(peonBlanco);
         
         Ficha torreNegro = FichaFactory.crearFichaTorre("torreNegro");
         Ficha torreBlanco = FichaFactory.crearFichaTorre("torreBlanco");
+        fichasNegras.add(torreNegro);
+        fichasBlancas.add(torreBlanco);
         
         Ficha caballoNegro = FichaFactory.crearFichaCaballo("caballoNegro");
         Ficha caballoBlanco = FichaFactory.crearFichaCaballo("caballoBlanco");
+        fichasNegras.add(caballoNegro);
+        fichasBlancas.add(caballoBlanco);
         
         Ficha alfilNegro = FichaFactory.crearFichaAlfil("alfilNegro");
         Ficha alfilBlanco = FichaFactory.crearFichaAlfil("alfilBlanco");
+        fichasNegras.add(alfilNegro);
+        fichasBlancas.add(alfilBlanco);
         
         Ficha reinaNegro = FichaFactory.crearFichaReina("reinaNegro");
         Ficha reinaBlanco = FichaFactory.crearFichaReina("reinaBlanco");
+        fichasNegras.add(reinaNegro);
+        fichasBlancas.add(reinaBlanco);
         
         Ficha reyNegro = FichaFactory.crearFichaRey("reyNegro");
         Ficha reyBlanco = FichaFactory.crearFichaRey("reyBlanco");
+        fichasNegras.add(reyNegro);
+        fichasBlancas.add(reyBlanco);
         
         for (int i = 0; i < 8; i++) {
             tablero[1][i] = peonNegro;
             tablero[6][i] = peonBlanco;
         }
+        fichasNegras.add(peonNegro);
+        fichasBlancas.add(peonBlanco);
 
         
         tablero[0][0] = torreNegro;
@@ -101,12 +122,29 @@ public class Tablero {
         System.out.println("Hasta: [" + filaFinal + "][" + columnaFinal + "]");
     }
     
+    public boolean esTurnoCorrecto(Ficha ficha) {
+        if (turnoBlancas && fichasBlancas.contains(ficha)) {
+            return true;
+        } else if (!turnoBlancas && fichasNegras.contains(ficha)) {
+            return true;
+        }
+        return false;
+    }
+    
+    public void cambiarTurno(){
+        if (turnoBlancas){
+            turnoBlancas = false;
+        } else {
+            turnoBlancas = true;
+        }
+    }
+    
     public Ficha obtenerFichaEnCoordenada(int fila, int columna) {
         return tablero[fila][columna];
     }
     
     public boolean validarMovimiento(Ficha ficha, int casillaInicial, int casillaFinal) {
-        if (ficha != null) {
+        if (ficha != null && esTurnoCorrecto(ficha)) {
             return ficha.validarMovimiento(casillaInicial, casillaFinal);
         }
         return false; // Si no hay ficha en la casilla inicial, el movimiento no es válido

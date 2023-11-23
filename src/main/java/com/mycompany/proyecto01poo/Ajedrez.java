@@ -28,7 +28,6 @@ public class Ajedrez {
     Factory fichaFactory = new FichaFactory();
 
     public Ajedrez() {
-        // Puedes inicializar el factory aquí o pasarlo como parámetro al constructor
         this.factory = new FichaFactory();
         this.tablero = new Tablero();
         tablero.iniciarTablero(fichaFactory);
@@ -54,9 +53,7 @@ public class Ajedrez {
         Ficha ficha = tablero.obtenerFichaEnCoordenada(filaInicial, columnaInicial);
         int casillaInicial = tablero.obtenerCasilla(filaInicial, columnaInicial);
         int casillaFinal = tablero.obtenerCasilla(filaFinal, columnaFinal);
-
-  
-        return ficha != null && tablero.validarMovimiento(ficha, casillaInicial, casillaFinal);
+        return ficha != null && tablero.validarMovimiento(ficha, casillaInicial, casillaFinal)&& tablero.esTurnoCorrecto(ficha);
     }
 
 
@@ -64,6 +61,7 @@ public class Ajedrez {
     public void intentarRealizarMovimiento(int filaInicial, int columnaInicial, int filaFinal, int columnaFinal) {
         if (validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal)) {
             tablero.realizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            tablero.cambiarTurno();
             tablero.imprimirTablero();
             return;
         } else {
