@@ -15,7 +15,7 @@ public class Alfil extends Ficha {
     }   
     
     public String getRepresentation() {
-        return nombre.equals("alfilNegro") ? "♝" : "♗";
+        return nombre.equals("alfilNegro") ? "\u265D" : "\u2657";
     }
     
     public String getNombre() {

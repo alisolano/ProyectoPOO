@@ -18,7 +18,7 @@ public class Caballo extends Ficha {
     }
     
     public String getRepresentation() {
-        return nombre.equals("caballoNegro") ? "♞" : "♘";
+        return nombre.equals("caballoNegro") ? "\u2658" : "\u2658";
     }
 
     public String getNombre() {

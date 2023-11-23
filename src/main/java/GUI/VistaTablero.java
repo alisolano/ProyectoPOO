@@ -8,6 +8,8 @@ import javax.swing.ImageIcon;
 import javax.swing.*;
 import java.util.HashMap;
 import java.util.Map;
+import com.mycompany.proyecto01poo.Ajedrez;
+import com.mycompany.proyecto01poo.Tablero;
 
 /**
  *
@@ -168,7 +170,11 @@ public class VistaTablero extends javax.swing.JFrame {
         botonMover = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenu3 = new javax.swing.JMenu();
+        jMenuItem3 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
 
         jInternalFrame1.setVisible(true);
 
@@ -1881,10 +1887,35 @@ public class VistaTablero extends javax.swing.JFrame {
         botonMover.setText("Mover");
         botonMover.setToolTipText("");
 
-        jMenu1.setText("Reiniciar");
+        jMenu1.setText("Guardar");
+
+        jMenuItem2.setText("Aceptar");
+        jMenu1.add(jMenuItem2);
+
         jMenuBar1.add(jMenu1);
 
+        jMenu3.setText("Cargar");
+
+        jMenuItem3.setText("Aceptar");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem3);
+
+        jMenuBar1.add(jMenu3);
+
         jMenu2.setText("Salir");
+
+        jMenuItem1.setText("Aceptar");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItem1);
+
         jMenuBar1.add(jMenu2);
 
         setJMenuBar(jMenuBar1);
@@ -2163,6 +2194,11 @@ public class VistaTablero extends javax.swing.JFrame {
         // Agrega el resto de las fichas según sea necesario
     }
 
+public int filaInicial;
+public int columnaInicial;
+public int filaFinal;
+public int columnaFinal;
+    
 private void movimiento() {
     if (ficha instanceof ImageIcon) {
         ImageIcon icono = (ImageIcon) ficha;
@@ -2175,8 +2211,9 @@ private void movimiento() {
     } else {
         System.out.println("La ficha no es un ImageIcon.");
     }
-
+    asignarInicial();
     // Resto de la lógica del movimiento
+
     casillaFinal.setIcon(ficha);
     casillaInicial.setIcon(null);
     ficha = null;
@@ -2193,6 +2230,783 @@ private String obtenerNombreFicha(ImageIcon icono) {
     return null;
 }
 
+
+public void asignarInicial() {
+        if (casillaInicial == jLabel20) {
+            filaInicial = 0;
+            columnaInicial = 0;
+            asignarFinal(filaInicial, columnaInicial);
+        } 
+        
+        if (casillaInicial == jLabel1) {
+            filaInicial = 0;
+            columnaInicial = 1;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel3) {
+            filaInicial = 0;
+            columnaInicial = 2;
+            asignarFinal(filaInicial, columnaInicial);
+        } 
+        
+        if (casillaInicial == jLabel4) {
+            filaInicial = 0;
+            columnaInicial = 3;
+            asignarFinal(filaInicial, columnaInicial);
+        } 
+        
+        if (casillaInicial == jLabel5) {
+            filaInicial = 0;
+            columnaInicial = 4;
+            asignarFinal(filaInicial, columnaInicial);
+        } 
+        
+        if (casillaInicial == jLabel6) {
+            filaInicial = 0;
+            columnaInicial = 5;
+            asignarFinal(filaInicial, columnaInicial);
+        } 
+        
+        if (casillaInicial == jLabel7) {
+            filaInicial = 0;
+            columnaInicial = 6;
+            asignarFinal(filaInicial, columnaInicial);
+        } 
+        
+        if (casillaInicial == jLabel8) {
+            filaInicial = 0;
+            columnaInicial = 7;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel2) {
+            filaInicial = 1;
+            columnaInicial = 0;
+            asignarFinal(filaInicial, columnaInicial);
+        } 
+        
+        if (casillaInicial == jLabel21) {
+            filaInicial = 1;
+            columnaInicial = 1;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel9) {
+            filaInicial = 1;
+            columnaInicial = 2;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel10) {
+            filaInicial = 1;
+            columnaInicial = 3;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel11) {
+            filaInicial = 1;
+            columnaInicial = 4;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel12) {
+            filaInicial = 1;
+            columnaInicial = 5;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel13) {
+            filaInicial = 1;
+            columnaInicial = 6;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel14) {
+            filaInicial = 1;
+            columnaInicial = 7;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel30) {
+            filaInicial = 2;
+            columnaInicial = 0;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel34) {
+            filaInicial = 2;
+            columnaInicial = 1;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel35) {
+            filaInicial = 2;
+            columnaInicial = 2;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel36) {
+            filaInicial = 2;
+            columnaInicial = 3;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel40) {
+            filaInicial = 2;
+            columnaInicial = 4;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel38) {
+            filaInicial = 2;
+            columnaInicial = 5;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel39) {
+            filaInicial = 2;
+            columnaInicial = 6;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel41) {
+            filaInicial = 2;
+            columnaInicial = 7;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel44) {
+            filaInicial = 3;
+            columnaInicial = 0;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel43) {
+            filaInicial = 3;
+            columnaInicial = 1;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel37) {
+            filaInicial = 3;
+            columnaInicial = 2;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel51) {
+            filaInicial = 3;
+            columnaInicial = 3;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel46) {
+            filaInicial = 3;
+            columnaInicial = 4;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel47) {
+            filaInicial = 3;
+            columnaInicial = 5;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel42) {
+            filaInicial = 3;
+            columnaInicial = 6;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel48) {
+            filaInicial = 3;
+            columnaInicial = 7;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel45) {
+            filaInicial = 4;
+            columnaInicial = 0;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel49) {
+            filaInicial = 4;
+            columnaInicial = 1;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel50) {
+            filaInicial = 4;
+            columnaInicial = 2;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel52) {
+            filaInicial = 4;
+            columnaInicial = 3;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel53) {
+            filaInicial = 4;
+            columnaInicial = 4;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel54) {
+            filaInicial = 4;
+            columnaInicial = 5;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel55) {
+            filaInicial = 4;
+            columnaInicial = 6;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel56) {
+            filaInicial = 4;
+            columnaInicial = 7;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel57) {
+            filaInicial = 5;
+            columnaInicial = 0;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel58) {
+            filaInicial = 5;
+            columnaInicial = 1;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel59) {
+            filaInicial = 5;
+            columnaInicial = 2;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel60) {
+            filaInicial = 5;
+            columnaInicial = 3;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel61) {
+            filaInicial = 5;
+            columnaInicial = 4;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel62) {
+            filaInicial = 5;
+            columnaInicial = 5;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel63) {
+            filaInicial = 5;
+            columnaInicial = 6;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel64) {
+            filaInicial = 5;
+            columnaInicial = 7;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel25) {
+            filaInicial = 6;
+            columnaInicial = 0;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel26) {
+            filaInicial = 6;
+            columnaInicial = 1;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel27) {
+            filaInicial = 6;
+            columnaInicial = 2;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel28) {
+            filaInicial = 6;
+            columnaInicial = 3;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel33) {
+            filaInicial = 6;
+            columnaInicial = 4;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel29) {
+            filaInicial = 6;
+            columnaInicial = 5;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel32) {
+            filaInicial = 6;
+            columnaInicial = 6;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel31) {
+            filaInicial = 6;
+            columnaInicial = 7;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel15) {
+            filaInicial = 7;
+            columnaInicial = 0;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel22) {
+            filaInicial = 7;
+            columnaInicial = 1;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel17) {
+            filaInicial = 7;
+            columnaInicial = 2;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel23) {
+            filaInicial = 7;
+            columnaInicial = 3;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel19) {
+            filaInicial = 7;
+            columnaInicial = 4;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel24) {
+            filaInicial = 7;
+            columnaInicial = 5;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel18) {
+            filaInicial = 7;
+            columnaInicial = 6;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+        
+        if (casillaInicial == jLabel16) {
+            filaInicial = 7;
+            columnaInicial = 7;
+            asignarFinal(filaInicial, columnaInicial);
+        }
+}
+
+
+    public void asignarFinal(int filaInicial, int columnaInicial) {
+        Ajedrez ajedrez = Ajedrez.obtenerInstancia();
+        
+        if (casillaFinal == jLabel20) {
+            filaFinal = 0;
+            columnaFinal = 0;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        } 
+        
+        if (casillaFinal == jLabel1) {
+            filaFinal = 0;
+            columnaFinal = 1;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel3) {
+            filaFinal = 0;
+            columnaFinal = 2;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        } 
+        
+        if (casillaFinal == jLabel4) {
+            filaFinal = 0;
+            columnaFinal = 3;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        } 
+        
+        if (casillaFinal == jLabel5) {
+            filaFinal = 0;
+            columnaFinal = 4;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        } 
+        
+        if (casillaFinal == jLabel6) {
+            filaFinal = 0;
+            columnaFinal = 5;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        } 
+        
+        if (casillaFinal == jLabel7) {
+            filaFinal = 0;
+            columnaFinal = 6;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        } 
+        
+        if (casillaFinal == jLabel8) {
+            filaFinal = 0;
+            columnaFinal = 7;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel2) {
+            filaFinal = 1;
+            columnaFinal = 0;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        } 
+        
+        if (casillaFinal == jLabel21) {
+            filaFinal = 1;
+            columnaFinal = 1;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel9) {
+            filaFinal = 1;
+            columnaFinal = 2;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel10) {
+            filaFinal = 1;
+            columnaFinal = 3;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel11) {
+            filaFinal = 1;
+            columnaFinal = 4;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel12) {
+            filaFinal = 1;
+            columnaFinal = 5;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel13) {
+            filaFinal = 1;
+            columnaFinal = 6;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel14) {
+            filaFinal = 1;
+            columnaFinal = 7;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel30) {
+            filaFinal = 2;
+            columnaFinal = 0;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel34) {
+            filaFinal = 2;
+            columnaFinal = 1;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel35) {
+            filaFinal = 2;
+            columnaFinal = 2;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel36) {
+            filaFinal = 2;
+            columnaFinal = 3;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel40) {
+            filaFinal = 2;
+            columnaFinal = 4;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel38) {
+            filaFinal = 2;
+            columnaFinal = 5;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel39) {
+            filaFinal = 2;
+            columnaFinal = 6;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel41) {
+            filaFinal = 2;
+            columnaFinal = 7;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel44) {
+            filaFinal = 3;
+            columnaFinal = 0;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel43) {
+            filaFinal = 3;
+            columnaFinal = 1;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel37) {
+            filaFinal = 3;
+            columnaFinal = 2;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel51) {
+            filaFinal = 3;
+            columnaFinal = 3;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel46) {
+            filaFinal = 3;
+            columnaFinal = 4;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel47) {
+            filaFinal = 3;
+            columnaFinal = 5;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel42) {
+            filaFinal = 3;
+            columnaFinal = 6;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel48) {
+            filaFinal = 3;
+            columnaFinal = 7;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel45) {
+            filaFinal = 4;
+            columnaFinal = 0;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel49) {
+            filaFinal = 4;
+            columnaFinal = 1;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel50) {
+            filaFinal = 4;
+            columnaFinal = 2;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel52) {
+            filaFinal = 4;
+            columnaFinal = 3;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel53) {
+            filaFinal = 4;
+            columnaFinal = 4;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel54) {
+            filaFinal = 4;
+            columnaFinal = 5;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel55) {
+            filaFinal = 4;
+            columnaFinal = 6;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel56) {
+            filaFinal = 4;
+            columnaFinal = 7;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel57) {
+            filaFinal = 5;
+            columnaFinal = 0;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel58) {
+            filaFinal = 5;
+            columnaFinal = 1;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel59) {
+            filaFinal = 5;
+            columnaFinal = 2;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel60) {
+            filaFinal = 5;
+            columnaFinal = 3;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel61) {
+            filaFinal = 5;
+            columnaFinal = 4;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel62) {
+            filaFinal = 5;
+            columnaFinal = 5;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel63) {
+            filaFinal = 5;
+            columnaFinal = 6;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel64) {
+            filaFinal = 5;
+            columnaFinal = 7;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel25) {
+            filaFinal = 6;
+            columnaFinal = 0;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel26) {
+            filaFinal = 6;
+            columnaFinal = 1;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel27) {
+            filaFinal = 6;
+            columnaFinal = 2;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel28) {
+            filaFinal = 6;
+            columnaFinal = 3;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel33) {
+            filaFinal = 6;
+            columnaFinal = 4;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel29) {
+            filaFinal = 6;
+            columnaFinal = 5;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel32) {
+            filaFinal = 6;
+            columnaFinal = 6;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel31) {
+            filaFinal = 6;
+            columnaFinal = 7;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel15) {
+            filaFinal = 7;
+            columnaFinal = 0;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel22) {
+            filaFinal = 7;
+            columnaFinal = 1;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel17) {
+            filaFinal = 7;
+            columnaFinal = 2;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel23) {
+            filaFinal = 7;
+            columnaFinal = 3;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel19) {
+            filaFinal = 7;
+            columnaFinal = 4;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel24) {
+            filaFinal = 7;
+            columnaFinal = 5;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel18) {
+            filaFinal = 7;
+            columnaFinal = 6;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+        if (casillaFinal == jLabel16) {
+            filaFinal = 7;
+            columnaFinal = 7;
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        }
+        
+    
+    } 
 
 
     private void jLabel20MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel20MouseClicked
@@ -2979,6 +3793,14 @@ private String obtenerNombreFicha(ImageIcon icono) {
 
         }        // TODO add your handling code here:
     }//GEN-LAST:event_jLabel16MouseClicked
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        dispose();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
     
     /**
      * @param args the command line arguments
@@ -3098,7 +3920,11 @@ private String obtenerNombreFicha(ImageIcon icono) {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel10;
     private javax.swing.JPanel jPanel11;
     private javax.swing.JPanel jPanel12;

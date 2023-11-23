@@ -62,34 +62,6 @@ public class Tablero {
         tablero[7][7] = torreBlanco;
     }
     
-    
-    //private Matriz casillas;
-    private boolean casillaOcupada;
-    private boolean turnoBlanca;
-    private Ficha fichas;
-
-    public Tablero(boolean casillaOcupada, boolean turnoBlanca) {
-       //this.casillas = casillas;
-        this.casillaOcupada = casillaOcupada;
-        this.turnoBlanca = turnoBlanca;
-    }
-
-    public boolean getCasillaOcupada() {
-        return casillaOcupada;
-    }
-
-    public void setCasillaOcupada(boolean casillaOcupada) {//el parametro deberia ser la casilla?
-        this.casillaOcupada = casillaOcupada;
-    }
-
-    public boolean getTurnoBlanca() {
-        return turnoBlanca;
-    }
-
-    public void setTurnoBlanca(boolean turnoBlanca) {
-        this.turnoBlanca = turnoBlanca;
-    }
-    
     public void imprimirTablero() {
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 8; j++) {

@@ -7,6 +7,7 @@ package com.mycompany.proyecto01poo;
 import java.awt.event.ActionEvent;
 import GUI.VistaTablero;
 import javax.swing.JButton;
+import javax.swing.JLabel;
 
 
 /**
@@ -29,15 +30,11 @@ public class Ajedrez {
     public Ajedrez() {
         // Puedes inicializar el factory aquí o pasarlo como parámetro al constructor
         this.factory = new FichaFactory();
-        this.tablero = new Tablero(false, true);
+        this.tablero = new Tablero();
         tablero.iniciarTablero(fichaFactory);
-               
-        tablero.imprimirTablero(); // Imprime el tablero después de la inicialización
-
+        tablero.imprimirTablero();
         VistaTablero vista = new VistaTablero();
         vista.setVisible(true);
-        //añadirActionEvents();
-        //movimientos = new Movimientos();A
     }
     
     // Método para obtener la instancia única de Ajedrez
@@ -50,44 +47,8 @@ public class Ajedrez {
     
     //La instancia del singleton se obtendra de la siguiente manera: Ajedrez juegoDeAjedrez = Ajedrez.obtenerInstancia();
     
-    
-    //@Override
-    public void actionPerformed(ActionEvent ae) {
-        if (turnoJugador == 'A') {
-            posicionActual = getBotonPosicionString(ae.getSource());
 
-            if (comprobarSiLaFichaEsBlanca(posicionActual)) {
-                posicionAntigua = posicionActual;
-            } else if (posicionAntigua != null) {
-                posicionNueva = posicionActual;
-                    //cambiarFichas(posicionAntigua, posicionNueva);
-                    posicionNueva = null;
-                    posicionAntigua = null;
-                    //turnoMaquina();
-                    //comprobarJaqueMateHaciaBlancas();
-            }
-        }
-    }
-    
-    private boolean comprobarSiLaFichaEsBlanca(String posicion) {
-        int x = Character.getNumericValue(posicion.charAt(1));
-        int y = Character.getNumericValue(posicion.charAt(0));
-        return true;
-    }
-    
-    private String getBotonPosicionString(Object boton) {
-
-        return null;
-    }
-    
-    private void cambiarFichas(String posAntigua, String posNueva) {
-    }
-    
-
-    
-    private void cambiarEnString(String posAntigua, String posNueva) {
-
-    }
+   
     
     private boolean validarMovimiento(int filaInicial, int columnaInicial, int filaFinal, int columnaFinal) {
         Ficha ficha = tablero.obtenerFichaEnCoordenada(filaInicial, columnaInicial);
@@ -103,8 +64,11 @@ public class Ajedrez {
     public void intentarRealizarMovimiento(int filaInicial, int columnaInicial, int filaFinal, int columnaFinal) {
         if (validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal)) {
             tablero.realizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            tablero.imprimirTablero();
+            return;
         } else {
             System.out.println("Movimiento no válido");
+            return;
         }
     }
 }
