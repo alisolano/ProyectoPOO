@@ -39,6 +39,7 @@ public class PantallaInicio extends javax.swing.JFrame {
         txtJugador2 = new javax.swing.JTextField();
         btnInicio = new javax.swing.JButton();
         btnCerrar = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -48,16 +49,16 @@ public class PantallaInicio extends javax.swing.JFrame {
         lblJugador1.setFont(new java.awt.Font("Onyx", 0, 24)); // NOI18N
         lblJugador1.setText("Nombre del Jugador 1");
         getContentPane().add(lblJugador1);
-        lblJugador1.setBounds(70, 50, 140, 27);
+        lblJugador1.setBounds(70, 110, 140, 27);
 
         lblJugador2.setFont(new java.awt.Font("Onyx", 0, 24)); // NOI18N
         lblJugador2.setText("Nombre del Jugador 2");
         getContentPane().add(lblJugador2);
-        lblJugador2.setBounds(70, 110, 150, 20);
+        lblJugador2.setBounds(70, 170, 150, 20);
         getContentPane().add(txtJugador1);
-        txtJugador1.setBounds(230, 50, 230, 30);
+        txtJugador1.setBounds(230, 110, 230, 30);
         getContentPane().add(txtJugador2);
-        txtJugador2.setBounds(230, 110, 230, 30);
+        txtJugador2.setBounds(230, 170, 230, 30);
 
         btnInicio.setText("Iniciar Juego");
         btnInicio.addActionListener(new java.awt.event.ActionListener() {
@@ -66,7 +67,7 @@ public class PantallaInicio extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnInicio);
-        btnInicio.setBounds(230, 170, 230, 23);
+        btnInicio.setBounds(230, 230, 230, 24);
 
         btnCerrar.setBackground(new java.awt.Color(153, 0, 0));
         btnCerrar.setText("X");
@@ -76,7 +77,12 @@ public class PantallaInicio extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnCerrar);
-        btnCerrar.setBounds(510, 0, 50, 23);
+        btnCerrar.setBounds(510, 0, 50, 24);
+
+        jLabel1.setFont(new java.awt.Font("Onyx", 0, 48)); // NOI18N
+        jLabel1.setText("Juego de Ajedrez");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(150, 10, 220, 60);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -92,7 +98,7 @@ public class PantallaInicio extends javax.swing.JFrame {
         VistaTablero ir = new VistaTablero(Jugador1,Jugador2);
        
           ir.setVisible(true);
-      
+          dispose();
    
     }//GEN-LAST:event_btnInicioActionPerformed
 
@@ -136,6 +142,7 @@ this.dispose();        // TODO add your handling code here:
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCerrar;
     private javax.swing.JButton btnInicio;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel lblJugador1;
     private javax.swing.JLabel lblJugador2;
     private javax.swing.JTextField txtJugador1;

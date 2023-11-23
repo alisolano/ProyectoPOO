@@ -1770,8 +1770,7 @@ public class VistaTablero extends javax.swing.JFrame {
             jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel29Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel43, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(9, Short.MAX_VALUE))
+                .addComponent(jLabel43, javax.swing.GroupLayout.DEFAULT_SIZE, 44, Short.MAX_VALUE))
         );
         jPanel29Layout.setVerticalGroup(
             jPanel29Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2227,6 +2226,16 @@ private void movimiento() {
     */
 }
 
+    public static void SuccessBox(String mensaje, String titulo) {
+                //Esta funcion es para que salte un mensaje de confirmacion en caso de que se agregue el ingrediente
+                javax.swing.JOptionPane.showMessageDialog((null), mensaje, "¡Movimiento hecho!" + titulo, javax.swing.JOptionPane.INFORMATION_MESSAGE);
+        }
+    
+    public static void FailBox(String mensaje, String titulo) {
+            //Esta funcion es para que salte un mensaje de error en caso de que se falle algo
+            javax.swing.JOptionPane.showMessageDialog((null), mensaje, "Movimiento inválido. Por favor repetir la jugada." + titulo, javax.swing.JOptionPane.INFORMATION_MESSAGE);
+
+    }
 
 public void asignarInicial() {
         if (casillaInicial == jLabel20) {
@@ -3077,11 +3086,13 @@ public void asignarInicial() {
             ficha = null;
             casillaInicial = null;
             casillaFinal = null;
+            SuccessBox("¡Movimiento hecho!","Pantalla emergente");
         } else{
             System.out.println("Movimiento no valido");
             ficha = null;
             casillaInicial = null;
             casillaFinal = null;
+            FailBox("Movimiento inválido. Por favor repetir la jugada.","Pantalla emergente");
             }
     }
 
