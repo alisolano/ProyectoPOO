@@ -53,7 +53,8 @@ public class Ajedrez {
         Ficha ficha = tablero.obtenerFichaEnCoordenada(filaInicial, columnaInicial);
         int casillaInicial = tablero.obtenerCasilla(filaInicial, columnaInicial);
         int casillaFinal = tablero.obtenerCasilla(filaFinal, columnaFinal);
-        return ficha != null && tablero.validarMovimiento(ficha, casillaInicial, casillaFinal)&& tablero.esTurnoCorrecto(ficha);
+        return ficha != null && tablero.validarMovimiento(ficha, casillaInicial, casillaFinal)&& tablero.esTurnoCorrecto(ficha)
+                        && tablero.casillasIntermediasVacias(filaInicial, columnaInicial, filaFinal, columnaFinal);
     }
 
 

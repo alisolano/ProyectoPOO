@@ -9,11 +9,13 @@ public class Tablero {
    private boolean turnoBlancas;
    private ArrayList<Ficha> fichasBlancas;
    private ArrayList<Ficha> fichasNegras;
+   private ArrayList<Ficha> caballos;
 
     public Tablero() {
         tablero = new Ficha[8][8];
         this.fichasBlancas = new ArrayList<>();
         this.fichasNegras = new ArrayList<>();
+        this.caballos = new ArrayList<>();
         turnoBlancas = true;
     }
     
@@ -40,6 +42,8 @@ public class Tablero {
         Ficha caballoBlanco = FichaFactory.crearFichaCaballo("caballoBlanco");
         fichasNegras.add(caballoNegro);
         fichasBlancas.add(caballoBlanco);
+        caballos.add(caballoNegro);
+        caballos.add(caballoBlanco);
         
         Ficha alfilNegro = FichaFactory.crearFichaAlfil("alfilNegro");
         Ficha alfilBlanco = FichaFactory.crearFichaAlfil("alfilBlanco");
@@ -142,6 +146,54 @@ public class Tablero {
     public Ficha obtenerFichaEnCoordenada(int fila, int columna) {
         return tablero[fila][columna];
     }
+    public boolean casillasIntermediasVacias(int filaInicial, int columnaInicial, int filaFinal, int columnaFinal) {
+        Ficha ficha = obtenerFichaEnCoordenada(filaInicial, columnaInicial);
+        if (!caballos.contains(ficha)){
+        // Verificar si el movimiento es vertical, horizontal o diagonal
+            if (filaInicial == filaFinal && columnaInicial != columnaFinal) {
+                // Movimiento horizontal
+                int direccion = (columnaFinal - columnaInicial) / Math.abs(columnaFinal - columnaInicial);
+
+                for (int columna = columnaInicial + direccion; columna != columnaFinal; columna += direccion) {
+                    if (tablero[filaInicial][columna] != null) {
+                        return false; // Hay una ficha en una casilla intermedia
+                    }
+                }
+            } else if (columnaInicial == columnaFinal && filaInicial != filaFinal) {
+                // Movimiento vertical
+                int direccion = (filaFinal - filaInicial) / Math.abs(filaFinal - filaInicial);
+
+                for (int fila = filaInicial + direccion; fila != filaFinal; fila += direccion) {
+                    if (tablero[fila][columnaInicial] != null) {
+                        return false; // Hay una ficha en una casilla intermedia
+                    }
+                }
+            } else if (Math.abs(filaFinal - filaInicial) == Math.abs(columnaFinal - columnaInicial)) {
+                // Movimiento diagonal
+                int diferenciaFilas = filaFinal - filaInicial;
+                int direccionFila = (diferenciaFilas != 0) ? diferenciaFilas / Math.abs(diferenciaFilas) : 0;
+
+                int diferenciaColumnas = columnaFinal - columnaInicial;
+                int direccionColumna = (diferenciaColumnas != 0) ? diferenciaColumnas / Math.abs(diferenciaColumnas) : 0;
+
+
+                for (int i = 1; i < Math.abs(filaFinal - filaInicial); i++) {
+                    int fila = filaInicial + i * direccionFila;
+                    int columna = columnaInicial + i * direccionColumna;
+
+                    if (tablero[fila][columna] != null) {
+                        return false; // Hay una ficha en una casilla intermedia
+                    }
+                }
+            }
+
+            return true; // Todas las casillas intermedias están vacías
+        } else {
+            return true;
+        }
+    }
+
+
     
     public boolean validarMovimiento(Ficha ficha, int casillaInicial, int casillaFinal) {
         if (ficha != null && esTurnoCorrecto(ficha)) {
