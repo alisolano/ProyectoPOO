@@ -3083,13 +3083,23 @@ public void asignarInicial() {
     private void validarMovimiento(int filaInicial, int columnaInicial, int filaFinal, int columnaFinal){
         Ajedrez ajedrez = Ajedrez.obtenerInstancia();
         if(ajedrez.validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal) && ajedrez.validarCaptura(filaInicial, columnaInicial, filaFinal, columnaFinal)){
-            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);   
             casillaFinal.setIcon(ficha);
             casillaInicial.setIcon(null);
             ficha = null;
             casillaInicial = null;
             casillaFinal = null;
             CapturaBox("¡Captura!","Pantalla emergente");
+        } else if (ajedrez.validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal) && ajedrez.validarPromocion(filaInicial, columnaInicial, filaFinal)){
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            ajedrez.validarPromocion(filaInicial, columnaInicial, filaFinal);
+            casillaFinal.setIcon(ficha);
+            casillaInicial.setIcon(null);
+            ficha = null;
+            casillaInicial = null;
+            casillaFinal = null;
+            SuccessBox("¡Promocion!","Pantalla emergente"); 
+            
         } else if(ajedrez.validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal)){
             ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
             casillaFinal.setIcon(ficha);
@@ -3098,6 +3108,7 @@ public void asignarInicial() {
             casillaInicial = null;
             casillaFinal = null;
             SuccessBox("¡Movimiento hecho!","Pantalla emergente");
+   
         }else{
             System.out.println("Movimiento no valido");
             ficha = null;

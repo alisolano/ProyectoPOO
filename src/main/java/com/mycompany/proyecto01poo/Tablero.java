@@ -10,12 +10,14 @@ public class Tablero {
    private ArrayList<Ficha> fichasBlancas;
    private ArrayList<Ficha> fichasNegras;
    private ArrayList<Ficha> caballos;
+   private ArrayList<Ficha> peones;
 
     public Tablero() {
         tablero = new Ficha[8][8];
         this.fichasBlancas = new ArrayList<>();
         this.fichasNegras = new ArrayList<>();
         this.caballos = new ArrayList<>();
+        this.peones = new ArrayList<>();
         turnoBlancas = true;
     }
     
@@ -66,6 +68,8 @@ public class Tablero {
         }
         fichasNegras.add(peonNegro);
         fichasBlancas.add(peonBlanco);
+        peones.add(peonNegro);
+        peones.add(peonBlanco);
 
         
         tablero[0][0] = torreNegro;
@@ -246,6 +250,23 @@ public class Tablero {
             } else {
                 return false;
             }
+        }
+    }
+    
+    public boolean promocionPeon(int filaInicial, int columnaInicial, int filaFinal){
+        Ficha ficha = obtenerFichaEnCoordenada(filaInicial, columnaInicial);
+        if (peones.contains(ficha)){
+            if (fichasNegras.contains(ficha) && filaFinal == 7){
+               System.out.println("Promocion peon negro");
+               return true;
+            } else if(fichasBlancas.contains(ficha) && filaFinal == 0){
+                System.out.println("Promocion peon blanco");
+                return true;
+            } else{
+                return false;
+            }
+        } else {
+            return false;
         }
     }
      

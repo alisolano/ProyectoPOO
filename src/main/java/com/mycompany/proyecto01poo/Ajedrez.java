@@ -76,5 +76,9 @@ public class Ajedrez {
         }
     }
     
+    public boolean validarPromocion(int filaInicial, int columnaInicial, int filaFinal){
+        return tablero.promocionPeon(filaInicial, columnaInicial, filaFinal);
+    }
+    
     
 }
