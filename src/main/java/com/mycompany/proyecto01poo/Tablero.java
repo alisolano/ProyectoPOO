@@ -275,5 +275,13 @@ public class Tablero {
             return false;
         }
     }
+    
+    public ArrayList<String> getCapturaNegras() {
+        return capturaNegras;
+    }
+        
+    public ArrayList<String> getCapturaBlancas() {
+        return capturaBlancas;
+    }
      
 }

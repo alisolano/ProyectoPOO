@@ -6,6 +6,7 @@ package com.mycompany.proyecto01poo;
 
 import java.awt.event.ActionEvent;
 import GUI.VistaTablero;
+import java.util.ArrayList;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
@@ -17,6 +18,7 @@ import javax.swing.JLabel;
 public class Ajedrez {
     private static Ajedrez instancia = null;
     private Factory factory;
+    private Tablero tablero;
     private char turnoJugador = 'A';
     private String posicionAntigua = null;
     private String posicionNueva = null;
@@ -24,7 +26,6 @@ public class Ajedrez {
     public static String fichaElegida;
     
     //instancias de tablero y factory para la generacion de tablero
-    Tablero tablero = new Tablero();
     Factory fichaFactory = new FichaFactory();
 
     public Ajedrez() {
@@ -80,5 +81,28 @@ public class Ajedrez {
         return tablero.promocionPeon(filaInicial, columnaInicial, filaFinal);
     }
     
+    
+    public ArrayList<String> obtenerListaCapturaNegras() {
+        ArrayList<String> listaCapturaNegras = tablero.getCapturaNegras();
+        ArrayList<String> listaCapturaNegrasStrings = new ArrayList<>();
+
+        for (String ficha : listaCapturaNegras) {
+            listaCapturaNegrasStrings.add(ficha.toString());
+        }
+
+    return listaCapturaNegrasStrings;
+    }
+    
+    public ArrayList<String> obtenerListaCapturaBlancas() {
+        ArrayList<String> listaCapturaBlancas = tablero.getCapturaBlancas();
+        ArrayList<String> listaCapturaBlancasStrings = new ArrayList<>();
+
+        for (String ficha : listaCapturaBlancas) {
+            listaCapturaBlancasStrings.add(ficha.toString());
+        }
+
+    return listaCapturaBlancasStrings;
+    }
+
     
 }
