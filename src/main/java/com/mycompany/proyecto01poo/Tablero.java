@@ -1,8 +1,9 @@
 package com.mycompany.proyecto01poo;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Tablero {
+public class Tablero implements Serializable {
     
     
    private Ficha[][] tablero;
