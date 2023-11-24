@@ -6,7 +6,15 @@ package com.mycompany.proyecto01poo;
 
 import java.awt.event.ActionEvent;
 import GUI.VistaTablero;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 
@@ -17,6 +25,10 @@ import javax.swing.JLabel;
  */
 public class Ajedrez {
     private static Ajedrez instancia = null;
+
+    public static Ajedrez getInstancia() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
     private Factory factory;
     private Tablero tablero;
     private char turnoJugador = 'A';
@@ -27,6 +39,8 @@ public class Ajedrez {
     
     //instancias de tablero y factory para la generacion de tablero
     Factory fichaFactory = new FichaFactory();
+    private ArrayList<VistaTablero> vistatablero;
+    private ArrayList<Tablero> Tablero;
 
     public Ajedrez() {
         this.factory = new FichaFactory();
@@ -103,6 +117,96 @@ public class Ajedrez {
 
     return listaCapturaBlancasStrings;
     }
-
+    public Ajedrez CargarDatos() throws IOException, ClassNotFoundException{
+        
+        try {
+            ObjectInputStream lecturaVistaTablero = new ObjectInputStream(new FileInputStream("vistatablero.dat") );
+            ObjectInputStream lecturaTablero = new ObjectInputStream(new FileInputStream("Tablero.dat") );
+            
+            
+            this.vistatablero = (ArrayList <VistaTablero>)lecturaVistaTablero.readObject();
+            this.Tablero = (ArrayList <Tablero>)lecturaTablero.readObject();
+            
+            
+            lecturaVistaTablero.close();
+            lecturaTablero.close();
+            
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Ajedrez.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return null;
+        
+    }
     
+    
+    public VistaTablero getVistaTablero(int index) {
+        if (index >= 0 && index < vistatablero.size()) {
+            return vistatablero.get(index);
+        }
+        return null; //devuelve null si el índice está fuera de rango
+    }
+    
+    public Tablero getTablero(int index) {
+        if (index >= 0 && index < Tablero.size()) {
+            return Tablero.get(index);
+        }
+        return null; //devuelve null si el índice está fuera de rango
+    }
+    
+ 
+    
+    public void GuardarDatos(){
+        try {
+            ObjectOutputStream escrituraVistaTablero = new ObjectOutputStream(new FileOutputStream("vistatablero.dat") );
+            ObjectOutputStream escrituraTablero = new ObjectOutputStream(new FileOutputStream("Tablero.dat") );
+            
+            
+            escrituraVistaTablero.writeObject(vistatablero);
+            escrituraTablero.writeObject(Tablero);
+            
+            
+            escrituraVistaTablero.flush();
+            escrituraTablero.flush();
+            
+            
+            escrituraVistaTablero.close();
+            escrituraTablero.close();
+            
+            
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(VistaTablero.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IOException ex) {
+            Logger.getLogger(Tablero.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
+
+    public ArrayList<VistaTablero> getVistaTablero() {
+        return vistatablero;
+    }
+
+    public ArrayList<Tablero> getTablero() {
+        return Tablero;
+    }
+
+   
+ 
+    
+     @Override
+    public String toString(){
+        String res = "";
+        res+="-VistaTablero-\n";
+        for(VistaTablero VistaTablero:this.vistatablero){
+            res+=VistaTablero.toString()+"\n";
+        }
+        res+="-Utensilios-\n";
+        for(Tablero Tablero:this.Tablero){
+            res+=Tablero.toString()+"\n";
+        }
+        
+        
+        
+        return res;
+        
+    }
+
 }
