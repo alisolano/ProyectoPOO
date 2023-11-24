@@ -285,4 +285,74 @@ public class Tablero implements Serializable {
         return capturaBlancas;
     }
      
+        public void finalPromocionNegras(int filaFinal, int columnaFinal, int eleccion, Factory fichaFactory) {
+            if (eleccion == 0) {
+
+                tablero[filaFinal][columnaFinal] = null;
+                Ficha alfilNegro = fichaFactory.crearFichaAlfil("alfilNegro");
+                fichasNegras.add(alfilNegro);               
+                tablero[filaFinal][columnaFinal] = alfilNegro;
+
+            }
+            if (eleccion == 1) {
+
+                tablero[filaFinal][columnaFinal] = null;
+                Ficha caballoNegro = fichaFactory.crearFichaCaballo("caballoNegro");
+                fichasNegras.add(caballoNegro);               
+                tablero[filaFinal][columnaFinal] = caballoNegro;
+
+            }
+            if (eleccion == 2) {
+
+                tablero[filaFinal][columnaFinal] = null;
+                Ficha reinaNegro = fichaFactory.crearFichaReina("reinaNegro");
+                fichasNegras.add(reinaNegro);               
+                tablero[filaFinal][columnaFinal] = reinaNegro;
+
+            }
+            if (eleccion == 3) {
+
+                tablero[filaFinal][columnaFinal] = null;
+                Ficha torreNegro = fichaFactory.crearFichaTorre("torreNegro");
+                fichasNegras.add(torreNegro);               
+                tablero[filaFinal][columnaFinal] = torreNegro;
+
+            }
+    }
+        
+    public void finalPromocionBlancas(int filaFinal, int columnaFinal, int eleccion, Factory fichaFactory) {
+            if (eleccion == 0) {
+
+                tablero[filaFinal][columnaFinal] = null;
+                Ficha alfilBlanco = fichaFactory.crearFichaAlfil("alfilBlanco");
+                fichasBlancas.add(alfilBlanco);               
+                tablero[filaFinal][columnaFinal] = alfilBlanco;
+
+            }
+            if (eleccion == 1) {
+
+                tablero[filaFinal][columnaFinal] = null;
+                Ficha caballoBlanco = fichaFactory.crearFichaCaballo("caballoBlanco");
+                fichasBlancas.add(caballoBlanco);               
+                tablero[filaFinal][columnaFinal] = caballoBlanco;
+
+            }
+            if (eleccion == 2) {
+
+                tablero[filaFinal][columnaFinal] = null;
+                Ficha reinaBlanco = fichaFactory.crearFichaReina("reinaBlanco");
+                fichasBlancas.add(reinaBlanco);               
+                tablero[filaFinal][columnaFinal] = reinaBlanco;
+
+            }
+            if (eleccion == 3) {
+
+                tablero[filaFinal][columnaFinal] = null;
+                Ficha torreBlanco = fichaFactory.crearFichaTorre("torreBlanco");
+                fichasBlancas.add(torreBlanco);               
+                tablero[filaFinal][columnaFinal] = torreBlanco;
+
+            }
+    }
+    
 }

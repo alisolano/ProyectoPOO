@@ -190,6 +190,13 @@ public class Ajedrez {
 
    
  
+    public void aplicarPromocionNegras(int filaFinal, int columnaFinal, int eleccion) {
+        tablero.finalPromocionNegras(filaFinal, columnaFinal, eleccion, fichaFactory);
+    }
+    
+    public void aplicarPromocionBlancas(int filaFinal, int columnaFinal, int eleccion) {
+        tablero.finalPromocionBlancas(filaFinal, columnaFinal, eleccion, fichaFactory);
+    }
     
      @Override
     public String toString(){

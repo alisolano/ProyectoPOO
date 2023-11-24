@@ -4089,149 +4089,215 @@ public void asignarInicial() {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
     
     public void fichaPromover(int fichaPromocion){
+        Ajedrez ajedrez = Ajedrez.obtenerInstancia();       
         if (fichaPromocion == 0 &&  filaFinal == 7){
+            ajedrez.aplicarPromocionNegras(columnaFinal, filaFinal, fichaPromocion);
             if (columnaFinal == 0){
                 jLabel15.setIcon(new ImageIcon(alfilNegro.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                ajedrez.aplicarPromocionNegras(7, 0, 0);
             } else if (columnaFinal == 1){
                 jLabel22.setIcon(new ImageIcon(alfilNegro.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                ajedrez.aplicarPromocionNegras(7, 1, 0);
             } else if (columnaFinal == 2){
                 jLabel17.setIcon(new ImageIcon(alfilNegro.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                ajedrez.aplicarPromocionNegras(7, 2, 0);
             } else if (columnaFinal == 3){
                 jLabel23.setIcon(new ImageIcon(alfilNegro.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                ajedrez.aplicarPromocionNegras(7, 3, 0);
             } else if (columnaFinal == 4){
                 jLabel19.setIcon(new ImageIcon(alfilNegro.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                ajedrez.aplicarPromocionNegras(7, 4, 0);
             } else if (columnaFinal == 5){
                 jLabel24.setIcon(new ImageIcon(alfilNegro.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                ajedrez.aplicarPromocionNegras(7, 5, 0);
             } else if (columnaFinal == 6){
                 jLabel18.setIcon(new ImageIcon(alfilNegro.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                ajedrez.aplicarPromocionNegras(7, 6, 0);
             } else if (columnaFinal == 7){
                 jLabel16.setIcon(new ImageIcon(alfilNegro.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                ajedrez.aplicarPromocionNegras(7, 7, 0);
             }
         } else if (fichaPromocion == 1 &&  filaFinal == 7){
                 if (columnaFinal == 0){
                   jLabel15.setIcon(new ImageIcon(caballoNegro.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionNegras(7, 0, 1);
               } if (columnaFinal == 1){
                   jLabel22.setIcon(new ImageIcon(caballoNegro.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionNegras(7, 1, 1);
               } if (columnaFinal == 2){
                   jLabel17.setIcon(new ImageIcon(caballoNegro.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionNegras(7, 2, 0);
               } if (columnaFinal == 3){
                   jLabel23.setIcon(new ImageIcon(caballoNegro.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionNegras(7, 3, 1);
               } if (columnaFinal == 4){
                   jLabel19.setIcon(new ImageIcon(caballoNegro.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionNegras(7, 4, 1);
               } if (columnaFinal == 5){
                   jLabel24.setIcon(new ImageIcon(caballoNegro.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionNegras(7, 5, 1);
               } if (columnaFinal == 6){
                   jLabel18.setIcon(new ImageIcon(caballoNegro.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionNegras(7, 6, 1);
               } if (columnaFinal == 7){
                   jLabel16.setIcon(new ImageIcon(caballoNegro.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionNegras(7, 7, 1);
               }
         } else if (fichaPromocion == 2 &&  filaFinal == 7){
                 if (columnaFinal == 0){
                   jLabel15.setIcon(new ImageIcon(reinaNegro.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionNegras(7, 0, 2);
               } if (columnaFinal == 1){
                   jLabel22.setIcon(new ImageIcon(reinaNegro.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionNegras(7, 1, 2);
               } if (columnaFinal == 2){
                   jLabel17.setIcon(new ImageIcon(reinaNegro.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionNegras(7, 2, 2);
               } if (columnaFinal == 3){
                   jLabel23.setIcon(new ImageIcon(reinaNegro.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionNegras(7, 3, 2);
               } if (columnaFinal == 4){
                   jLabel19.setIcon(new ImageIcon(reinaNegro.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionNegras(7, 4, 2);
               } if (columnaFinal == 5){
                   jLabel24.setIcon(new ImageIcon(reinaNegro.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionNegras(7, 5, 2);
               } if (columnaFinal == 6){
                   jLabel18.setIcon(new ImageIcon(reinaNegro.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionNegras(7, 6, 2);
               } if (columnaFinal == 7){
                   jLabel16.setIcon(new ImageIcon(reinaNegro.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionNegras(7, 7, 2);
               }
         } else if (fichaPromocion == 3 &&  filaFinal == 7){
                 if (columnaFinal == 0){
                   jLabel15.setIcon(new ImageIcon(torreNegro.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionNegras(7, 0, 3);
               } if (columnaFinal == 1){
                   jLabel22.setIcon(new ImageIcon(torreNegro.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionNegras(7, 1, 3);
               } if (columnaFinal == 2){
                   jLabel17.setIcon(new ImageIcon(torreNegro.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionNegras(7, 2, 3);
               } if (columnaFinal == 3){
                   jLabel23.setIcon(new ImageIcon(torreNegro.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionNegras(7, 3, 3);
               } if (columnaFinal == 4){
                   jLabel19.setIcon(new ImageIcon(torreNegro.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionNegras(7, 4, 3);
               } if (columnaFinal == 5){
                   jLabel24.setIcon(new ImageIcon(torreNegro.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionNegras(7, 5, 3);
               } if (columnaFinal == 6){
                   jLabel18.setIcon(new ImageIcon(torreNegro.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionNegras(7, 6, 3);
               } if (columnaFinal == 7){
                   jLabel16.setIcon(new ImageIcon(torreNegro.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionNegras(7, 7, 3);
               }
         } else if (fichaPromocion == 0 &&  filaFinal == 0){
             if (columnaFinal == 0){
                 jLabel20.setIcon(new ImageIcon(alfilBlanco.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                ajedrez.aplicarPromocionBlancas(0, 0, 0);
             } else if (columnaFinal == 1){
                 jLabel1.setIcon(new ImageIcon(alfilBlanco.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                ajedrez.aplicarPromocionBlancas(0, 1, 0);
             } else if (columnaFinal == 2){
                 jLabel3.setIcon(new ImageIcon(alfilBlanco.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                ajedrez.aplicarPromocionBlancas(0, 2, 0);
             } else if (columnaFinal == 3){
                 jLabel4.setIcon(new ImageIcon(alfilBlanco.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                ajedrez.aplicarPromocionBlancas(0, 3, 0);
             } else if (columnaFinal == 4){
                 jLabel5.setIcon(new ImageIcon(alfilBlanco.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                ajedrez.aplicarPromocionBlancas(0, 4, 0);
             } else if (columnaFinal == 5){
                 jLabel6.setIcon(new ImageIcon(alfilBlanco.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                ajedrez.aplicarPromocionBlancas(0, 5, 0);
             } else if (columnaFinal == 6){
                 jLabel7.setIcon(new ImageIcon(alfilBlanco.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                ajedrez.aplicarPromocionBlancas(0, 6, 0);
             } else if (columnaFinal == 7){
                 jLabel8.setIcon(new ImageIcon(alfilBlanco.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                ajedrez.aplicarPromocionBlancas(0, 7, 0);
             }
         } else if (fichaPromocion == 1 &&  filaFinal == 0){
                 if (columnaFinal == 0){
                   jLabel20.setIcon(new ImageIcon(caballoBlanco.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionBlancas(0, 0, 1);
               } if (columnaFinal == 1){
                   jLabel1.setIcon(new ImageIcon(caballoBlanco.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionBlancas(0, 1, 1);
               } if (columnaFinal == 2){
                   jLabel3.setIcon(new ImageIcon(caballoBlanco.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionBlancas(0, 2, 1);
               } if (columnaFinal == 3){
                   jLabel4.setIcon(new ImageIcon(caballoBlanco.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionBlancas(0, 3, 1);
               } if (columnaFinal == 4){
                   jLabel5.setIcon(new ImageIcon(caballoBlanco.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionBlancas(0, 4, 1);
               } if (columnaFinal == 5){
                   jLabel6.setIcon(new ImageIcon(caballoBlanco.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionBlancas(0, 5, 1);
               } if (columnaFinal == 6){
                   jLabel7.setIcon(new ImageIcon(caballoBlanco.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionBlancas(0, 6, 1);
               } if (columnaFinal == 7){
                   jLabel8.setIcon(new ImageIcon(caballoBlanco.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionBlancas(0, 7, 1);
               }
         } else if (fichaPromocion == 2 &&  filaFinal == 0){
                 if (columnaFinal == 0){
                   jLabel20.setIcon(new ImageIcon(reinaBlanco.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionBlancas(0, 0, 2);
               } if (columnaFinal == 1){
                   jLabel1.setIcon(new ImageIcon(reinaBlanco.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionBlancas(0, 1, 2);
               } if (columnaFinal == 2){
                   jLabel3.setIcon(new ImageIcon(reinaBlanco.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionBlancas(0, 2, 2);
               } if (columnaFinal == 3){
                   jLabel4.setIcon(new ImageIcon(reinaBlanco.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionBlancas(0, 3, 2);
               } if (columnaFinal == 4){
                   jLabel5.setIcon(new ImageIcon(reinaBlanco.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionBlancas(0, 4, 2);
               } if (columnaFinal == 5){
                   jLabel6.setIcon(new ImageIcon(reinaBlanco.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionBlancas(0, 5, 2);
               } if (columnaFinal == 6){
                   jLabel7.setIcon(new ImageIcon(reinaBlanco.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionBlancas(0, 6, 2);
               } if (columnaFinal == 7){
                   jLabel8.setIcon(new ImageIcon(reinaBlanco.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionBlancas(0, 7, 2);
               }
         } else if (fichaPromocion == 3 &&  filaFinal == 0){
                 if (columnaFinal == 0){
                   jLabel20.setIcon(new ImageIcon(torreBlanca.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionBlancas(0, 0, 3);
               } if (columnaFinal == 1){
                   jLabel1.setIcon(new ImageIcon(torreBlanca.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionBlancas(0, 1, 3);
               } if (columnaFinal == 2){
                   jLabel3.setIcon(new ImageIcon(torreBlanca.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionBlancas(0, 2, 3);
               } if (columnaFinal == 3){
                   jLabel4.setIcon(new ImageIcon(torreBlanca.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionBlancas(0, 3, 3);
               } if (columnaFinal == 4){
                   jLabel5.setIcon(new ImageIcon(torreBlanca.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionBlancas(0, 4, 3);
               } if (columnaFinal == 5){
                   jLabel6.setIcon(new ImageIcon(torreBlanca.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionBlancas(0, 5, 3);
               } if (columnaFinal == 6){
                   jLabel7.setIcon(new ImageIcon(torreBlanca.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionBlancas(0, 6, 3);
               } if (columnaFinal == 7){
                   jLabel8.setIcon(new ImageIcon(torreBlanca.getImage().getScaledInstance(40,40,java.awt.Image.SCALE_SMOOTH)));
+                  ajedrez.aplicarPromocionBlancas(0, 7, 3);
                 }         
             }
             jButton1.setVisible(false);
