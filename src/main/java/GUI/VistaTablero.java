@@ -8,12 +8,16 @@ import javax.swing.ImageIcon;
 import javax.swing.*;
 import com.mycompany.proyecto01poo.Ajedrez;
 import com.mycompany.proyecto01poo.Tablero;
+import java.io.IOException;
+import java.io.Serializable;
+import java.util.logging.Logger;
+import java.util.logging.Level;
 
 /**
  *
  * @author JP113
  */
-public class VistaTablero extends javax.swing.JFrame {
+public class VistaTablero extends javax.swing.JFrame implements Serializable {
 
     private JLabel casillaInicial = null;
     private JLabel casillaFinal = null;
@@ -1916,6 +1920,11 @@ public class VistaTablero extends javax.swing.JFrame {
                 jButton1MouseClicked(evt);
             }
         });
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Caballo");
         jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -1946,6 +1955,11 @@ public class VistaTablero extends javax.swing.JFrame {
         jMenu1.setText("Guardar");
 
         jMenuItem2.setText("Aceptar");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem2);
 
         jMenuBar1.add(jMenu1);
@@ -4024,7 +4038,17 @@ public void asignarInicial() {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        // TODO add your handling code here:
+        Ajedrez ajedrez = Ajedrez.getInstancia();
+        try {
+            ajedrez.CargarDatos();
+            SuccessBox("Se han cargado los datos exitosamente", "");
+        } catch (IOException ex) {
+            Logger.getLogger(VistaTablero.class.getName()).log(Level.SEVERE, null, ex);
+            FailBox("Ha ocurrido un error al cargar los datos", "");
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(VistaTablero.class.getName()).log(Level.SEVERE, null, ex);
+            FailBox("Ha ocurrido un error al cargar los datos", "");
+        }
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
@@ -4050,6 +4074,16 @@ public void asignarInicial() {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        Ajedrez ajedrez = Ajedrez.getInstancia();
+        ajedrez.GuardarDatos();
+        SuccessBox("Se han guardado los datos con exito", "");
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
     
     public void fichaPromover(int fichaPromocion, int filaFinal){
         if (fichaPromocion == 0 &&  filaFinal == 7){
