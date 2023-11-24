@@ -11,6 +11,8 @@ public class Tablero {
    private ArrayList<Ficha> fichasNegras;
    private ArrayList<Ficha> caballos;
    private ArrayList<Ficha> peones;
+   private ArrayList<String> capturaNegras;
+   private ArrayList<String> capturaBlancas;
 
     public Tablero() {
         tablero = new Ficha[8][8];
@@ -18,6 +20,8 @@ public class Tablero {
         this.fichasNegras = new ArrayList<>();
         this.caballos = new ArrayList<>();
         this.peones = new ArrayList<>();
+        this.capturaNegras = new ArrayList<>();
+        this.capturaBlancas = new ArrayList<>();
         turnoBlancas = true;
     }
     
@@ -236,6 +240,7 @@ public class Tablero {
         
         if (equipoEnemigo == 0){
             if (fichasBlancas.contains(fichaFinal)){
+                capturaBlancas.add(tablero[filaFinal][columnaFinal].getNombre());                
                 tablero[filaFinal][columnaFinal] = null;
                 System.out.println("Captura negro a blanco");
                 return true;
@@ -244,6 +249,7 @@ public class Tablero {
             }
         } else {
             if (fichasNegras.contains(fichaFinal)){
+                capturaNegras.add(tablero[filaFinal][columnaFinal].getNombre());                
                 tablero[filaFinal][columnaFinal] = null;
                 System.out.println("Captura blanco a negro");
                 return true;
