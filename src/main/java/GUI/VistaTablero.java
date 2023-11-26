@@ -22,6 +22,7 @@ public class VistaTablero extends javax.swing.JFrame implements Serializable {
     private JLabel casillaInicial = null;
     private JLabel casillaFinal = null;
     private Icon ficha;
+    private Icon fichaCapturada;
     private String Jugador1="";
     private String Jugador2="";
     private int fichaPromocion;
@@ -192,6 +193,8 @@ public class VistaTablero extends javax.swing.JFrame implements Serializable {
         jButton2 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
+        jLabel68 = new javax.swing.JLabel();
+        jLabel69 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem2 = new javax.swing.JMenuItem();
@@ -1841,8 +1844,8 @@ public class VistaTablero extends javax.swing.JFrame implements Serializable {
             jPanel36Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel36Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel47, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(16, Short.MAX_VALUE))
+                .addComponent(jLabel47, javax.swing.GroupLayout.DEFAULT_SIZE, 38, Short.MAX_VALUE)
+                .addContainerGap())
         );
 
         jPanel26.setBackground(new java.awt.Color(153, 102, 0));
@@ -1998,186 +2001,192 @@ public class VistaTablero extends javax.swing.JFrame implements Serializable {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(139, 139, 139)
-                .addComponent(lblJugador1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(0, 183, Short.MAX_VALUE)
-                        .addComponent(lblJugador2, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(94, 94, 94))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addGap(0, 183, Short.MAX_VALUE)
+                                .addComponent(lblJugador2, javax.swing.GroupLayout.PREFERRED_SIZE, 189, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(94, 94, 94))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(0, 0, 0)
-                                                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(0, 0, 0)
-                                                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(0, 0, 0)
-                                                .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(0, 0, 0)
-                                                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(0, 0, 0)
-                                                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                    .addGroup(layout.createSequentialGroup()
-                                                        .addComponent(jPanel27, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addGap(0, 0, 0)
-                                                        .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                                        .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addGap(0, 0, 0)
-                                                        .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jPanel37, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jPanel63, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, 0)
-                                        .addComponent(jPanel64, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, 0)
-                                        .addComponent(jPanel65, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, 0)
-                                        .addComponent(jPanel66, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, 0)
-                                        .addComponent(jPanel67, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, 0)
-                                        .addComponent(jPanel68, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, 0)
-                                        .addComponent(jPanel69, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, 0)
-                                        .addComponent(jPanel70, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(11, 11, 11)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jPanel54, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, 0)
+                                        .addGap(12, 12, 12)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                            .addComponent(jPanel48, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jPanel55, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(jPanel13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addGap(0, 0, 0)
+                                                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addGap(0, 0, 0)
+                                                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addGap(0, 0, 0)
+                                                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addGap(0, 0, 0)
+                                                        .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addGap(0, 0, 0)
+                                                        .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                            .addGroup(layout.createSequentialGroup()
+                                                                .addComponent(jPanel27, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addGap(0, 0, 0)
+                                                                .addComponent(jPanel23, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                                .addComponent(jPanel14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addGap(0, 0, 0)
+                                                                .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addComponent(jPanel37, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jPanel63, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(0, 0, 0)
-                                                .addComponent(jPanel56, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                        .addGap(0, 0, 0)
-                                        .addComponent(jPanel57, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, 0)
-                                        .addComponent(jPanel60, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(jPanel64, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(0, 0, 0)
+                                                .addComponent(jPanel65, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(0, 0, 0)
+                                                .addComponent(jPanel66, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(0, 0, 0)
+                                                .addComponent(jPanel67, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(0, 0, 0)
+                                                .addComponent(jPanel68, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(0, 0, 0)
+                                                .addComponent(jPanel69, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(0, 0, 0)
+                                                .addComponent(jPanel70, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))))
                                     .addGroup(layout.createSequentialGroup()
+                                        .addGap(11, 11, 11)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                             .addGroup(layout.createSequentialGroup()
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addGroup(layout.createSequentialGroup()
-                                                        .addComponent(jPanel34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addGap(0, 0, 0)
-                                                        .addComponent(jPanel38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addGap(0, 0, 0)
-                                                        .addComponent(jPanel39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                    .addGroup(layout.createSequentialGroup()
-                                                        .addComponent(jPanel46, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addGap(0, 0, 0)
-                                                        .addComponent(jPanel47, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jPanel41, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jPanel49, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                .addComponent(jPanel54, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                 .addGap(0, 0, 0)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jPanel42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jPanel50, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                            .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(layout.createSequentialGroup()
-                                                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                .addGap(50, 50, 50)
-                                                .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                    .addComponent(jPanel48, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addComponent(jPanel55, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addGap(0, 0, 0)
+                                                        .addComponent(jPanel56, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                                 .addGap(0, 0, 0)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addGroup(layout.createSequentialGroup()
-                                                        .addComponent(jPanel40, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addGap(0, 0, 0)
-                                                        .addComponent(jPanel35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                    .addGroup(layout.createSequentialGroup()
-                                                        .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addGap(0, 0, 0)
-                                                        .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                .addComponent(jPanel57, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(0, 0, 0)
+                                                .addComponent(jPanel60, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                                             .addGroup(layout.createSequentialGroup()
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addGroup(layout.createSequentialGroup()
+                                                                .addComponent(jPanel34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addGap(0, 0, 0)
+                                                                .addComponent(jPanel38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addGap(0, 0, 0)
+                                                                .addComponent(jPanel39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                            .addGroup(layout.createSequentialGroup()
+                                                                .addComponent(jPanel46, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addGap(0, 0, 0)
+                                                                .addComponent(jPanel47, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addComponent(jPanel41, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addComponent(jPanel49, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addGap(0, 0, 0)
+                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addComponent(jPanel42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addComponent(jPanel50, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                    .addComponent(jPanel10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addGap(50, 50, 50)
+                                                        .addComponent(jPanel11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                        .addGap(0, 0, 0)
+                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addComponent(jPanel12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addGroup(layout.createSequentialGroup()
+                                                                .addComponent(jPanel40, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addGap(0, 0, 0)
+                                                                .addComponent(jPanel35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                            .addGroup(layout.createSequentialGroup()
+                                                                .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addGap(0, 0, 0)
+                                                                .addComponent(jPanel21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                    .addGroup(layout.createSequentialGroup()
+                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                            .addGroup(layout.createSequentialGroup()
+                                                                .addComponent(jPanel30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addGap(0, 0, 0)
+                                                                .addComponent(jPanel29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                                .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                .addGap(0, 0, 0)
+                                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                                                    .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                                    .addComponent(jPanel59, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                        .addGap(0, 0, 0)
+                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                            .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                                .addGap(0, 0, 0)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                    .addGroup(layout.createSequentialGroup()
-                                                        .addComponent(jPanel30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addGap(0, 0, 0)
-                                                        .addComponent(jPanel29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                                        .addComponent(jPanel17, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                        .addGap(0, 0, 0)
-                                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                                            .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                            .addComponent(jPanel59, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                                .addGap(0, 0, 0)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addComponent(jPanel22, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                        .addGap(0, 0, 0)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                .addGroup(layout.createSequentialGroup()
-                                                    .addComponent(jPanel58, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addGap(0, 0, 0)
-                                                    .addComponent(jPanel62, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addGap(0, 0, 0)
-                                                    .addComponent(jPanel61, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE))
-                                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                                    .addComponent(jPanel51, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addGap(0, 0, 0)
-                                                    .addComponent(jPanel52, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addGap(0, 0, 0)
-                                                    .addComponent(jPanel53, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                            .addComponent(jPanel45, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(layout.createSequentialGroup()
-                                                    .addComponent(jPanel36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addGap(0, 0, 0)
-                                                    .addComponent(jPanel28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addGap(0, 0, 0)
-                                                    .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGroup(layout.createSequentialGroup()
-                                                    .addComponent(jPanel43, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addGap(0, 0, 0)
-                                                    .addComponent(jPanel44, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))))))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel67)
-                    .addComponent(jLabel66)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                        .addGroup(layout.createSequentialGroup()
+                                                            .addComponent(jPanel58, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addGap(0, 0, 0)
+                                                            .addComponent(jPanel62, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addGap(0, 0, 0)
+                                                            .addComponent(jPanel61, javax.swing.GroupLayout.DEFAULT_SIZE, 53, Short.MAX_VALUE))
+                                                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                                                            .addComponent(jPanel51, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addGap(0, 0, 0)
+                                                            .addComponent(jPanel52, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addGap(0, 0, 0)
+                                                            .addComponent(jPanel53, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                                    .addComponent(jPanel45, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                        .addGroup(layout.createSequentialGroup()
+                                                            .addComponent(jPanel36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addGap(0, 0, 0)
+                                                            .addComponent(jPanel28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addGap(0, 0, 0)
+                                                            .addComponent(jPanel26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                                        .addGroup(layout.createSequentialGroup()
+                                                            .addComponent(jPanel43, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                            .addGap(0, 0, 0)
+                                                            .addComponent(jPanel44, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE))))))))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel67)
+                            .addComponent(jLabel66)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(139, 139, 139)
+                        .addComponent(lblJugador1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(105, 105, 105)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jButton1)
                     .addComponent(jButton2)
                     .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(jButton4)
+                    .addComponent(jLabel68, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel69, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(14, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(33, Short.MAX_VALUE)
-                .addComponent(lblJugador1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(lblJugador1)
+                    .addComponent(jLabel68, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel67)
                 .addGap(3, 3, 3)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
@@ -2282,14 +2291,14 @@ public class VistaTablero extends javax.swing.JFrame implements Serializable {
                         .addGap(0, 0, 0)
                         .addComponent(lblJugador2)
                         .addGap(56, 56, 56))
-                    .addGroup(layout.createSequentialGroup()
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addComponent(jScrollPane2)
                         .addGap(18, 18, 18)
                         .addComponent(jLabel66)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 222, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(14, 14, 14))
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                    .addGroup(layout.createSequentialGroup()
                         .addGap(141, 141, 141)
                         .addComponent(jButton1)
                         .addGap(3, 3, 3)
@@ -2298,7 +2307,9 @@ public class VistaTablero extends javax.swing.JFrame implements Serializable {
                         .addComponent(jButton3)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jButton4)
-                        .addContainerGap())))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel69, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26))))
         );
 
         jPanel3.getAccessibleContext().setAccessibleName("");
@@ -2319,20 +2330,17 @@ private void rellenarListas() {
     Ajedrez ajedrez = Ajedrez.obtenerInstancia();
     
         recetaListModel = new DefaultListModel<>();
-        jList1.setModel(recetaListModel);
-
-        // Agregar los elementos del ArrayList de ingredientes al modelo de la lista
-        for (String receta : ajedrez.obtenerListaCapturaBlancas()) {
-            recetaListModel.addElement(receta);
-        }
-        
-        
         recetaListModel2 = new DefaultListModel<>();
         jList2.setModel(recetaListModel2);
 
-        // Agregar los elementos del ArrayList de ingredientes al modelo de la lista
-        for (String receta : ajedrez.obtenerListaCapturaNegras()) {
+        for (String receta : ajedrez.obtenerListaCapturaBlancas()) {
             recetaListModel2.addElement(receta);
+        }
+
+        jList1.setModel(recetaListModel);
+
+        for (String receta : ajedrez.obtenerListaCapturaNegras()) {
+            recetaListModel.addElement(receta);
         }
 }
 
@@ -3211,6 +3219,11 @@ public void asignarInicial() {
         if(ajedrez.validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal) && ajedrez.validarCaptura(filaInicial, columnaInicial, filaFinal, columnaFinal)){
             ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);   
             casillaFinal.setIcon(ficha);
+            if(!ajedrez.jugadorTurno()){
+                jLabel69.setIcon(fichaCapturada);
+            } else {
+                jLabel68.setIcon(fichaCapturada);
+            }
             casillaInicial.setIcon(null);
             ficha = null;
             casillaInicial = null;
@@ -3231,7 +3244,50 @@ public void asignarInicial() {
             jButton4.setVisible(true);
             SuccessBox("¡Promocion!","Pantalla emergente"); 
             
-        } else if(ajedrez.validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal)){
+        } else if(ajedrez.validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal) && ajedrez.validarCapturaPeon(filaInicial, columnaInicial, filaFinal, columnaFinal)){
+            ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            casillaFinal.setIcon(ficha);
+            casillaInicial.setIcon(null);
+            ficha = null;
+            casillaInicial = null;
+            casillaFinal = null;
+            
+            if(filaFinal == 5 && columnaFinal == 0){
+                jLabel45.setIcon(null); 
+            } else if(filaFinal == 5 && columnaFinal == 1){
+                jLabel49.setIcon(null);
+            } else if(filaFinal == 5 && columnaFinal == 2){
+                jLabel50.setIcon(null);
+            } else if(filaFinal == 5 && columnaFinal == 3){
+                jLabel52.setIcon(null);
+            } else if(filaFinal == 5 && columnaFinal == 4){
+                jLabel53.setIcon(null);
+            } else if(filaFinal == 5 && columnaFinal == 5){
+                jLabel54.setIcon(null);
+            } else if(filaFinal == 5 && columnaFinal == 6){
+                jLabel55.setIcon(null);
+            } else if(filaFinal == 5 && columnaFinal == 7){
+                jLabel56.setIcon(null);
+            } else if (filaFinal == 2 && columnaFinal == 0){
+                jLabel44.setIcon(null);
+            } else if (filaFinal == 2 && columnaFinal == 1){
+                jLabel43.setIcon(null);
+            } else if (filaFinal == 2 && columnaFinal == 2){
+                jLabel37.setIcon(null);
+            } else if (filaFinal == 2 && columnaFinal == 3){
+                jLabel51.setIcon(null);
+            } else if (filaFinal == 2 && columnaFinal == 4){
+                jLabel46.setIcon(null);
+            } else if (filaFinal == 2 && columnaFinal == 5){
+                jLabel47.setIcon(null);
+            } else if (filaFinal == 2 && columnaFinal == 6){
+                jLabel42.setIcon(null);
+            } else if (filaFinal == 2 && columnaFinal == 7){
+                jLabel48.setIcon(null);
+            } 
+            SuccessBox("¡Captura al peon!","Pantalla emergente");
+            System.out.println("captura al peon");
+        }else if(ajedrez.validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal)){
             ajedrez.intentarRealizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
             casillaFinal.setIcon(ficha);
             casillaInicial.setIcon(null);
@@ -3248,6 +3304,7 @@ public void asignarInicial() {
             FailBox("Movimiento inválido. Por favor repetir la jugada.","Pantalla emergente");
             }
         }
+        
     
 
 
@@ -3257,6 +3314,7 @@ public void asignarInicial() {
             ficha = jLabel20.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel20; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel20.getIcon();
             casillaFinal = jLabel20; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3278,6 +3336,7 @@ public void asignarInicial() {
             ficha = jLabel44.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel44; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel44.getIcon();
             casillaFinal = jLabel44; // Guardar el JLabel en casillaFinal
 
             movimiento();
@@ -3290,6 +3349,7 @@ public void asignarInicial() {
             ficha = jLabel1.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel1; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel1.getIcon();
             casillaFinal = jLabel1; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3302,6 +3362,7 @@ public void asignarInicial() {
             ficha = jLabel3.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel3; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel3.getIcon();
             casillaFinal = jLabel3; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3314,6 +3375,7 @@ public void asignarInicial() {
             ficha = jLabel4.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel4; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel4.getIcon();
             casillaFinal = jLabel4; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3326,6 +3388,7 @@ public void asignarInicial() {
             ficha = jLabel5.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel5; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel5.getIcon();
             casillaFinal = jLabel5; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3338,6 +3401,7 @@ public void asignarInicial() {
             ficha = jLabel6.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel6; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel6.getIcon();
             casillaFinal = jLabel6; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3350,6 +3414,7 @@ public void asignarInicial() {
             ficha = jLabel7.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel7; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel7.getIcon();
             casillaFinal = jLabel7; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3362,6 +3427,7 @@ public void asignarInicial() {
             ficha = jLabel8.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel8; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel8.getIcon();
             casillaFinal = jLabel8; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3374,6 +3440,7 @@ public void asignarInicial() {
             ficha = jLabel2.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel2; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel2.getIcon();
             casillaFinal = jLabel2; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3386,6 +3453,7 @@ public void asignarInicial() {
             ficha = jLabel21.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel21; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel21.getIcon();
             casillaFinal = jLabel21; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3398,6 +3466,7 @@ public void asignarInicial() {
             ficha = jLabel9.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel9; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel9.getIcon();
             casillaFinal = jLabel9; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3410,6 +3479,7 @@ public void asignarInicial() {
             ficha = jLabel10.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel10; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel10.getIcon();
             casillaFinal = jLabel10; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3422,6 +3492,7 @@ public void asignarInicial() {
             ficha = jLabel11.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel11; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel11.getIcon();
             casillaFinal = jLabel11; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3446,6 +3517,7 @@ public void asignarInicial() {
             ficha = jLabel13.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel13; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel13.getIcon();
             casillaFinal = jLabel13; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3458,6 +3530,7 @@ public void asignarInicial() {
             ficha = jLabel14.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel14; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel14.getIcon();
             casillaFinal = jLabel14; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3470,6 +3543,7 @@ public void asignarInicial() {
             ficha = jLabel30.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel30; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel30.getIcon();
             casillaFinal = jLabel30; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3482,6 +3556,7 @@ public void asignarInicial() {
             ficha = jLabel34.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel34; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel34.getIcon();
             casillaFinal = jLabel34; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3494,6 +3569,7 @@ public void asignarInicial() {
             ficha = jLabel35.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel35; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel35.getIcon(); 
             casillaFinal = jLabel35; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3506,6 +3582,7 @@ public void asignarInicial() {
             ficha = jLabel36.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel36; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel36.getIcon();
             casillaFinal = jLabel36; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3518,6 +3595,7 @@ public void asignarInicial() {
             ficha = jLabel40.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel40; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel40.getIcon();
             casillaFinal = jLabel40; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3530,6 +3608,7 @@ public void asignarInicial() {
             ficha = jLabel38.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel38; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel38.getIcon();
             casillaFinal = jLabel38; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3542,6 +3621,7 @@ public void asignarInicial() {
             ficha = jLabel39.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel39; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel39.getIcon();
             casillaFinal = jLabel39; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3554,6 +3634,7 @@ public void asignarInicial() {
             ficha = jLabel41.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel41; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel41.getIcon();
             casillaFinal = jLabel41; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3566,6 +3647,7 @@ public void asignarInicial() {
             ficha = jLabel43.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel43; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel43.getIcon();
             casillaFinal = jLabel43; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3578,6 +3660,7 @@ public void asignarInicial() {
             ficha = jLabel37.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel37; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel37.getIcon();
             casillaFinal = jLabel37; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3590,6 +3673,7 @@ public void asignarInicial() {
             ficha = jLabel51.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel51; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel51.getIcon();
             casillaFinal = jLabel51; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3602,6 +3686,7 @@ public void asignarInicial() {
             ficha = jLabel46.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel46; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel46.getIcon();
             casillaFinal = jLabel46; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3618,6 +3703,7 @@ public void asignarInicial() {
             ficha = jLabel47.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel47; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel47.getIcon();
             casillaFinal = jLabel47; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3630,6 +3716,7 @@ public void asignarInicial() {
             ficha = jLabel42.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel42; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel42.getIcon();
             casillaFinal = jLabel42; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3646,6 +3733,7 @@ public void asignarInicial() {
             ficha = jLabel48.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel48; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel48.getIcon();
             casillaFinal = jLabel48; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3658,6 +3746,7 @@ public void asignarInicial() {
             ficha = jLabel45.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel45; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel45.getIcon();
             casillaFinal = jLabel45; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3670,6 +3759,7 @@ public void asignarInicial() {
             ficha = jLabel49.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel49; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel49.getIcon();
             casillaFinal = jLabel49; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3682,6 +3772,7 @@ public void asignarInicial() {
             ficha = jLabel50.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel50; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel50.getIcon();
             casillaFinal = jLabel50; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3694,6 +3785,7 @@ public void asignarInicial() {
             ficha = jLabel52.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel52; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel52.getIcon();
             casillaFinal = jLabel52; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3706,6 +3798,7 @@ public void asignarInicial() {
             ficha = jLabel53.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel53; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel53.getIcon();
             casillaFinal = jLabel53; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3718,6 +3811,7 @@ public void asignarInicial() {
             ficha = jLabel54.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel54; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel54.getIcon();
             casillaFinal = jLabel54; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3730,6 +3824,7 @@ public void asignarInicial() {
             ficha = jLabel55.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel55; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel55.getIcon();
             casillaFinal = jLabel55; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3742,6 +3837,7 @@ public void asignarInicial() {
             ficha = jLabel56.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel56; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel56.getIcon();
             casillaFinal = jLabel56; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3754,6 +3850,7 @@ public void asignarInicial() {
             ficha = jLabel57.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel57; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel57.getIcon();
             casillaFinal = jLabel57; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3766,6 +3863,7 @@ public void asignarInicial() {
             ficha = jLabel58.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel58; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel58.getIcon();
             casillaFinal = jLabel58; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3778,6 +3876,7 @@ public void asignarInicial() {
             ficha = jLabel59.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel59; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel59.getIcon();
             casillaFinal = jLabel59; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3790,6 +3889,7 @@ public void asignarInicial() {
             ficha = jLabel60.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel60; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel60.getIcon();
             casillaFinal = jLabel60; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3802,6 +3902,7 @@ public void asignarInicial() {
             ficha = jLabel61.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel61; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel61.getIcon();
             casillaFinal = jLabel61; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3814,6 +3915,7 @@ public void asignarInicial() {
             ficha = jLabel62.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel62; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel62.getIcon();
             casillaFinal = jLabel62; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3826,6 +3928,7 @@ public void asignarInicial() {
             ficha = jLabel63.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel63; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel63.getIcon(); 
             casillaFinal = jLabel63; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3838,6 +3941,7 @@ public void asignarInicial() {
             ficha = jLabel64.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel64; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel64.getIcon();
             casillaFinal = jLabel64; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3850,6 +3954,7 @@ public void asignarInicial() {
             ficha = jLabel25.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel25; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel25.getIcon();
             casillaFinal = jLabel25; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3862,6 +3967,7 @@ public void asignarInicial() {
             ficha = jLabel26.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel26; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel26.getIcon();
             casillaFinal = jLabel26; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3874,6 +3980,7 @@ public void asignarInicial() {
             ficha = jLabel27.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel27; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel27.getIcon();
             casillaFinal = jLabel27; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3886,6 +3993,7 @@ public void asignarInicial() {
             ficha = jLabel28.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel28; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel28.getIcon();
             casillaFinal = jLabel28; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3898,6 +4006,7 @@ public void asignarInicial() {
             ficha = jLabel33.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel33; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel33.getIcon();
             casillaFinal = jLabel33; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3910,6 +4019,7 @@ public void asignarInicial() {
             ficha = jLabel29.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel29; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel29.getIcon();
             casillaFinal = jLabel29; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3922,6 +4032,7 @@ public void asignarInicial() {
             ficha = jLabel32.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel32; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel32.getIcon();
             casillaFinal = jLabel32; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3934,6 +4045,7 @@ public void asignarInicial() {
             ficha = jLabel31.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel31; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel31.getIcon(); 
             casillaFinal = jLabel31; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3946,6 +4058,7 @@ public void asignarInicial() {
             ficha = jLabel15.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel15; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel15.getIcon();
             casillaFinal = jLabel15; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3958,6 +4071,7 @@ public void asignarInicial() {
             ficha = jLabel22.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel22; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel22.getIcon();
             casillaFinal = jLabel22; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3970,6 +4084,7 @@ public void asignarInicial() {
             ficha = jLabel17.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel17; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel17.getIcon();
             casillaFinal = jLabel17; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3982,6 +4097,7 @@ public void asignarInicial() {
             ficha = jLabel23.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel23; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel23.getIcon();
             casillaFinal = jLabel23; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -3994,6 +4110,7 @@ public void asignarInicial() {
             ficha = jLabel19.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel19; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel19.getIcon();
             casillaFinal = jLabel19; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -4006,6 +4123,7 @@ public void asignarInicial() {
             ficha = jLabel24.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel24; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel24.getIcon();
             casillaFinal = jLabel24; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -4018,6 +4136,7 @@ public void asignarInicial() {
             ficha = jLabel18.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel18; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel18.getIcon();
             casillaFinal = jLabel18; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -4030,6 +4149,7 @@ public void asignarInicial() {
             ficha = jLabel16.getIcon(); // Guardar la imagen en la variable ficha
             casillaInicial = jLabel16; // Guardar el JLabel en casillaInicial
         } else {
+            fichaCapturada = jLabel16.getIcon();
             casillaFinal = jLabel16; // Guardar el JLabel en casillaFinal
             movimiento();
 
@@ -4425,6 +4545,8 @@ public void asignarInicial() {
     private javax.swing.JLabel jLabel65;
     private javax.swing.JLabel jLabel66;
     private javax.swing.JLabel jLabel67;
+    private javax.swing.JLabel jLabel68;
+    private javax.swing.JLabel jLabel69;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;

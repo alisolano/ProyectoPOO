@@ -114,7 +114,7 @@ public class Tablero implements Serializable {
         return fila * 8 + columna;
     }
     
-    public void moverFicha(int filaInicial, int columnaInicial, int filaFinal, int columnaFinal) {
+    private void moverFicha(int filaInicial, int columnaInicial, int filaFinal, int columnaFinal) {
         // Obtener la ficha de la posición inicial
         Ficha ficha = tablero[filaInicial][columnaInicial];
 
@@ -135,6 +135,27 @@ public class Tablero implements Serializable {
         System.out.println("Hasta: [" + filaFinal + "][" + columnaFinal + "]");
     }
     
+    private void moverFichaCapturaPeon(int filaInicial, int columnaInicial, int filaFinal, int columnaFinal) {
+        Ficha ficha = tablero[filaInicial][columnaInicial];
+
+        // Verificar si la posición final está ocupada
+        if (tablero[filaFinal][columnaFinal] != null) {
+            System.out.println("Error: La casilla final está ocupada");
+            return;
+        }
+
+        // Imprimir coordenadas antes del movimiento
+        System.out.println("Moviendo ficha desde: [" + filaInicial + "][" + columnaInicial + "]");
+
+        // Mover la ficha a la nueva posición
+        tablero[filaFinal][columnaFinal] = ficha;
+        tablero[filaInicial][columnaInicial] = null;
+        tablero[filaInicial][columnaInicial-1] = null;
+
+        // Imprimir coordenadas después del movimiento
+        System.out.println("Hasta: [" + filaFinal + "][" + columnaFinal + "]");
+    }
+    
     public boolean esTurnoCorrecto(Ficha ficha) {
         if (turnoBlancas && fichasBlancas.contains(ficha)) {
             return true;
@@ -143,6 +164,11 @@ public class Tablero implements Serializable {
         }
         return false;
     }
+    
+    public boolean getTurno(){
+        return turnoBlancas;
+    }
+    
     
     public void cambiarTurno(){
         if (turnoBlancas){
@@ -206,21 +232,43 @@ public class Tablero implements Serializable {
         }
     }
 
-
-    
-    public boolean validarMovimiento(Ficha ficha, int casillaInicial, int casillaFinal) {
-        if (ficha != null && esTurnoCorrecto(ficha)) {
-            return ficha.validarMovimiento(casillaInicial, casillaFinal);
-        }
-        return false; // Si no hay ficha en la casilla inicial, el movimiento no es válido
+    public boolean capturaPeon(int casillaInicial, int casillaFinal, int filaInicial, int columnaInicial){
+        if (turnoBlancas){
+                if(Math.abs(casillaFinal - casillaInicial) % 9 == 0 || 
+                    Math.abs(casillaFinal - casillaInicial) % 7 == 0){
+                    if (fichasNegras.contains(obtenerFichaEnCoordenada(filaInicial, columnaInicial-1))){
+                        if(peones.contains(obtenerFichaEnCoordenada(filaInicial, columnaInicial-1))){
+                        return true;
+                        }
+                    }
+                }
+                } else {
+                    if(Math.abs(casillaFinal - casillaInicial) % 9 == 0 || 
+                    Math.abs(casillaFinal - casillaInicial) % 7 == 0){
+                    if (fichasBlancas.contains(obtenerFichaEnCoordenada(filaInicial, columnaInicial-1))){
+                        if(peones.contains(obtenerFichaEnCoordenada(filaInicial, columnaInicial-1))){
+                        return true;
+                    } 
+                    }
+                }
+            } return false;
     }
-    
-    public void realizarMovimiento(int filaInicial, int columnaInicial, int filaFinal, int columnaFinal) {
-        Ficha ficha = obtenerFichaEnCoordenada(filaInicial, columnaInicial);
-        int casillaInicial = obtenerCasilla(filaInicial, columnaInicial);
-        int casillaFinal = obtenerCasilla(filaFinal, columnaFinal);
+    public boolean validarMovimiento(Ficha ficha, int casillaInicial, int casillaFinal, int filaInicial, int columnaInicial){
+        boolean peon = capturaPeon(casillaInicial, casillaFinal, filaInicial, columnaInicial);
+        if (peon){
+            return true;
+        } else if (ficha != null && esTurnoCorrecto(ficha)) {
+            return ficha.validarMovimiento(casillaInicial, casillaFinal);
+        } return false;
+    }
 
-        if (ficha != null && validarMovimiento(ficha, casillaInicial, casillaFinal)) {
+    
+    public void realizarMovimiento(int casillaInicial, int casillaFinal, int filaInicial, int columnaInicial, int filaFinal, int columnaFinal) {
+        Ficha ficha = obtenerFichaEnCoordenada(filaInicial, columnaInicial);
+        boolean peon = capturaPeon(casillaInicial, casillaFinal, filaInicial, columnaInicial);
+        if (peon){
+            moverFichaCapturaPeon(filaInicial, columnaInicial, filaFinal, columnaFinal);
+        } else if (ficha != null) {
             moverFicha(filaInicial, columnaInicial, filaFinal, columnaFinal);
             System.out.println("Ficha movida");
         } else {
@@ -240,7 +288,7 @@ public class Tablero implements Serializable {
         }
         
         if (equipoEnemigo == 0){
-            if (fichasBlancas.contains(fichaFinal)){
+            if (fichasBlancas.contains(fichaFinal) && fichasNegras.contains(ficha)){
                 capturaBlancas.add(tablero[filaFinal][columnaFinal].getNombre());                
                 tablero[filaFinal][columnaFinal] = null;
                 System.out.println("Captura negro a blanco");
@@ -249,7 +297,7 @@ public class Tablero implements Serializable {
                 return false;
             }
         } else {
-            if (fichasNegras.contains(fichaFinal)){
+            if (fichasNegras.contains(fichaFinal) && fichasBlancas.contains(ficha)){
                 capturaNegras.add(tablero[filaFinal][columnaFinal].getNombre());                
                 tablero[filaFinal][columnaFinal] = null;
                 System.out.println("Captura blanco a negro");
@@ -276,6 +324,7 @@ public class Tablero implements Serializable {
             return false;
         }
     }
+    
     
     public ArrayList<String> getCapturaNegras() {
         return capturaNegras;

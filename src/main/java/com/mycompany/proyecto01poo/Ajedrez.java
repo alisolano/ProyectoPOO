@@ -62,13 +62,15 @@ public class Ajedrez {
     //La instancia del singleton se obtendra de la siguiente manera: Ajedrez juegoDeAjedrez = Ajedrez.obtenerInstancia();
     
 
-   
+   public boolean jugadorTurno(){
+       return tablero.getTurno();
+   }
     
     public boolean validarMovimiento(int filaInicial, int columnaInicial, int filaFinal, int columnaFinal) {
         Ficha ficha = tablero.obtenerFichaEnCoordenada(filaInicial, columnaInicial);
         int casillaInicial = tablero.obtenerCasilla(filaInicial, columnaInicial);
         int casillaFinal = tablero.obtenerCasilla(filaFinal, columnaFinal);
-        return ficha != null && tablero.validarMovimiento(ficha, casillaInicial, casillaFinal)&& tablero.esTurnoCorrecto(ficha)
+        return ficha != null && tablero.validarMovimiento(ficha, casillaInicial, casillaFinal, filaInicial, columnaInicial)&& tablero.esTurnoCorrecto(ficha)
                         && tablero.casillasIntermediasVacias(filaInicial, columnaInicial, filaFinal, columnaFinal);
     }
     
@@ -80,8 +82,10 @@ public class Ajedrez {
     
     public void intentarRealizarMovimiento(int filaInicial, int columnaInicial, int filaFinal, int columnaFinal) {
         if (validarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal)) {
+            int casillaInicial = tablero.obtenerCasilla(filaInicial, columnaInicial);
+            int casillaFinal = tablero.obtenerCasilla(filaFinal, columnaFinal);
             tablero.capturaRegular(filaInicial, columnaInicial, filaFinal, columnaFinal);
-            tablero.realizarMovimiento(filaInicial, columnaInicial, filaFinal, columnaFinal);
+            tablero.realizarMovimiento(casillaInicial, casillaFinal, filaInicial, columnaInicial, filaFinal, columnaFinal);
             tablero.cambiarTurno();
             tablero.imprimirTablero();
             return;
@@ -89,6 +93,12 @@ public class Ajedrez {
             System.out.println("Movimiento no válido");
             return;
         }
+    }
+    
+    public boolean validarCapturaPeon(int filaInicial, int columnaInicial, int filaFinal, int columnaFinal){
+        int casillaInicial = tablero.obtenerCasilla(filaInicial, columnaInicial);
+        int casillaFinal = tablero.obtenerCasilla(filaFinal, columnaFinal);
+        return tablero.capturaPeon(casillaInicial, casillaFinal, filaInicial, columnaInicial);
     }
     
     public boolean validarPromocion(int filaInicial, int columnaInicial, int filaFinal){
