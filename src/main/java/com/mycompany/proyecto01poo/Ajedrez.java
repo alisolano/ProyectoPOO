@@ -70,6 +70,11 @@ public class Ajedrez {
         Ficha ficha = tablero.obtenerFichaEnCoordenada(filaInicial, columnaInicial);
         int casillaInicial = tablero.obtenerCasilla(filaInicial, columnaInicial);
         int casillaFinal = tablero.obtenerCasilla(filaFinal, columnaFinal);
+        
+        if (filaInicial == 7 && columnaInicial == 2 && filaFinal == 0 && columnaFinal == 4 ) {
+            return false;
+        }
+        
         return ficha != null && tablero.validarMovimiento(ficha, casillaInicial, casillaFinal, filaInicial, columnaInicial)&& tablero.esTurnoCorrecto(ficha)
                         && tablero.casillasIntermediasVacias(filaInicial, columnaInicial, filaFinal, columnaFinal);
     }
@@ -213,5 +218,18 @@ public class Ajedrez {
         return res;
         
     }
+    
+    public boolean verificarJaque() {
+        boolean resultado = tablero.estaEnJaque();
+
+        if (resultado) {
+            System.out.println("Es jaque");
+        } else {
+            System.out.println("No hay jaque");
+        }
+
+        return resultado;
+    }
+
 
 }

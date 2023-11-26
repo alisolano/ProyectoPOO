@@ -133,6 +133,7 @@ public class Tablero implements Serializable {
             System.out.println("Error: La casilla final está ocupada");
             return;
         }
+        
 
         // Imprimir coordenadas antes del movimiento
         System.out.println("Moviendo ficha desde: [" + filaInicial + "][" + columnaInicial + "]");
@@ -266,7 +267,8 @@ public class Tablero implements Serializable {
         boolean peon = capturaPeon(casillaInicial, casillaFinal, filaInicial, columnaInicial);
         if (peon){
             return true;
-        } else if (ficha != null && esTurnoCorrecto(ficha)) {
+        } 
+        else if (ficha != null && esTurnoCorrecto(ficha)) {
             return ficha.validarMovimiento(casillaInicial, casillaFinal);
         } return false;
     }
@@ -411,6 +413,112 @@ public class Tablero implements Serializable {
                 tablero[filaFinal][columnaFinal] = torreBlanco;
 
             }
+    }
+    
+    
+    public int getFila(Ficha ficha) {
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                if (tablero[i][j] == ficha) {
+                    return i;
+                }
+            }
+        }
+        return -1; // Valor de retorno cuando la ficha no se encuentra en el tablero
+    }
+
+    public int getColumna(Ficha ficha) {
+        for (int i = 0; i < 8; i++) {
+            for (int j = 0; j < 8; j++) {
+                if (tablero[i][j] == ficha) {
+                    return j;
+                }
+            }
+        }
+        return -1; // Valor de retorno cuando la ficha no se encuentra en el tablero
+    }
+    
+    
+    public boolean estaEnJaque() {
+        int filaReyBlanco = -1;
+        int columnaReyBlanco = -1;
+        int filaReyNegro = -1;
+        int columnaReyNegro = -1;
+
+        // Buscar la posición del rey blanco
+        for (Ficha ficha : fichasBlancas) {
+            if (ficha.getNombre().equals("Rey")) {
+                filaReyBlanco = getFila(ficha);
+                columnaReyBlanco = getColumna(ficha);
+                break; // Una vez encontrado, salimos del bucle
+            }
+        }
+
+        // Buscar la posición del rey negro
+        for (Ficha ficha : fichasNegras) {
+            if (ficha.getNombre().equals("Rey")) {
+                filaReyNegro = getFila(ficha);
+                columnaReyNegro = getColumna(ficha);
+                break; // Una vez encontrado, salimos del bucle
+            }
+        }
+
+        if (filaReyBlanco == -1 || columnaReyBlanco == -1 || filaReyNegro == -1 || columnaReyNegro == -1) {
+            System.out.println("Fallo crítico: No se encontró la posición de ambos reyes");
+            return false;
+        }
+
+        // Imprimir posiciones de los reyes
+        System.out.println("Posición Rey Blanco: [" + filaReyBlanco + "][" + columnaReyBlanco + "]");
+        System.out.println("Posición Rey Negro: [" + filaReyNegro + "][" + columnaReyNegro + "]");
+
+        // Verificar si alguna ficha enemiga puede capturar al rey blanco
+        ArrayList<Ficha> enemigosBlancos = fichasNegras;
+
+        for (Ficha enemigo : enemigosBlancos) {
+            int casillaInicial = obtenerCasilla(getFila(enemigo), getColumna(enemigo));
+            int casillaFinal = obtenerCasilla(filaReyBlanco, columnaReyBlanco);
+
+            if (validarMovimientoJaque(enemigo, casillaInicial, casillaFinal, getFila(enemigo), getColumna(enemigo), filaReyBlanco, columnaReyBlanco)) {
+                // Si alguna ficha enemiga puede capturar al rey blanco, está en jaque
+                System.out.println("Posición " + enemigo.getNombre() + ": [" + getFila(enemigo) + "][" + getColumna(enemigo) + "]");
+                System.out.println("¡Jaque al Rey Blanco!");
+                return true;
+            }
+        }
+
+        // Verificar si alguna ficha enemiga puede capturar al rey negro
+        ArrayList<Ficha> enemigosNegros = fichasBlancas;
+
+        for (Ficha enemigo : enemigosNegros) {
+            int casillaInicial = obtenerCasilla(getFila(enemigo), getColumna(enemigo));
+            int casillaFinal = obtenerCasilla(filaReyNegro, columnaReyNegro);
+
+            if (validarMovimientoJaque(enemigo, casillaInicial, casillaFinal, getFila(enemigo), getColumna(enemigo), filaReyNegro, columnaReyNegro)) {
+                // Si alguna ficha enemiga puede capturar al rey negro, está en jaque
+                System.out.println("Posición " + enemigo.getNombre() + ": [" + getFila(enemigo) + "][" + getColumna(enemigo) + "]");
+                System.out.println("¡Jaque al Rey Negro!");
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+
+    public boolean validarMovimientoJaque(Ficha ficha, int casillaInicial, int casillaFinal, int filaInicial, int columnaInicial, int filaFinal, int columnaFinal){
+        boolean peon = capturaPeon(casillaInicial, casillaFinal, filaInicial, columnaInicial);
+        if (peon){
+            return true;
+            
+            
+        } else if (filaInicial == 7 && columnaInicial == 2 && filaFinal == 0 && columnaFinal == 4 ) {
+            return false;
+        } 
+        
+        else if (ficha != null && !esTurnoCorrecto(ficha)) {
+            return ficha.validarMovimiento(casillaInicial, casillaFinal);
+        } return false;
     }
     
 }
