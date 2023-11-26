@@ -22,7 +22,7 @@ public class Rey extends Ficha {
     }   
     
     public String getRepresentation() {
-        return nombre.equals("reyNegro") ? "RN" : "RB";
+        return nombre.equals("reyNegro") ? "R" : "R";
     }
     
     public String getNombre() {

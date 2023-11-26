@@ -24,7 +24,7 @@ public class Peon extends Ficha {
     }
     
     public String getRepresentation() {
-        return nombre.equals("peonNegro") ? "PN" : "PB";
+        return nombre.equals("peonNegro") ? "♟" : "♙";
     }
     
     public String getNombre() {

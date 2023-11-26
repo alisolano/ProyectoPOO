@@ -74,6 +74,13 @@ public class Ajedrez {
         if (filaInicial == 7 && columnaInicial == 2 && filaFinal == 0 && columnaFinal == 4 ) {
             return false;
         }
+        else if (reyEnJaque(ficha)) {
+        // Si el rey está en jaque, verifica si la ficha es el rey
+        if (!"Rey".equals(ficha.getNombre())) {
+            System.out.println("El rey está en jaque. Solo puedes mover el rey para salir del jaque.");
+            return false;
+        }
+    }
         
         return ficha != null && tablero.validarMovimiento(ficha, casillaInicial, casillaFinal, filaInicial, columnaInicial)&& tablero.esTurnoCorrecto(ficha)
                         && tablero.casillasIntermediasVacias(filaInicial, columnaInicial, filaFinal, columnaFinal);
@@ -231,5 +238,8 @@ public class Ajedrez {
         return resultado;
     }
 
+    private boolean reyEnJaque(Ficha fichaMovida) {
+        return tablero.estaEnJaque();
+    }
 
 }

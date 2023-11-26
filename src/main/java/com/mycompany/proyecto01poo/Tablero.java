@@ -464,7 +464,7 @@ public class Tablero implements Serializable {
         }
 
         if (filaReyBlanco == -1 || columnaReyBlanco == -1 || filaReyNegro == -1 || columnaReyNegro == -1) {
-            System.out.println("Fallo crítico: No se encontró la posición de ambos reyes");
+            System.out.println("Fallo crítico: No se encontró la posición de algun rey");
             return false;
         }
 
@@ -520,5 +520,6 @@ public class Tablero implements Serializable {
             return ficha.validarMovimiento(casillaInicial, casillaFinal);
         } return false;
     }
+    
     
 }
