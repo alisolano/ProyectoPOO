@@ -16,10 +16,11 @@ public class Peon extends Ficha {
         this.nombre = nombre;
     }
     
+    
     @Override
     public boolean validarMovimiento(int casillaInicial, int casillaFinal) {
-       return Math.abs(casillaFinal - casillaInicial) % 8 == 0;
-    
+       return Math.abs(casillaFinal - casillaInicial) % 8 == 0 &&
+              Math.abs(casillaFinal - casillaInicial) < 17 ; 
     }
     
     public String getRepresentation() {

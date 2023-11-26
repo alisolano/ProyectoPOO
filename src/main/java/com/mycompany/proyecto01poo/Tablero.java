@@ -241,21 +241,23 @@ public class Tablero implements Serializable {
 
     public boolean capturaPeon(int casillaInicial, int casillaFinal, int filaInicial, int columnaInicial){
         if (turnoBlancas){
+            if(filaInicial == 3){
                 if(Math.abs(casillaFinal - casillaInicial) % 9 == 0 || 
                     Math.abs(casillaFinal - casillaInicial) % 7 == 0){
                     if (fichasNegras.contains(obtenerFichaEnCoordenada(filaInicial, columnaInicial-1))){
                         if(peones.contains(obtenerFichaEnCoordenada(filaInicial, columnaInicial-1))){
                         return true;
-                        }
+                        }}
                     }
                 }
                 } else {
+                    if (filaInicial == 4){
                     if(Math.abs(casillaFinal - casillaInicial) % 9 == 0 || 
                     Math.abs(casillaFinal - casillaInicial) % 7 == 0){
                     if (fichasBlancas.contains(obtenerFichaEnCoordenada(filaInicial, columnaInicial-1))){
                         if(peones.contains(obtenerFichaEnCoordenada(filaInicial, columnaInicial-1))){
                         return true;
-                    } 
+                    } }
                     }
                 }
             } return false;
