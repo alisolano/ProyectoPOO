@@ -4167,7 +4167,7 @@ public void asignarInicial() {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        Ajedrez ajedrez = Ajedrez.getInstancia();
+        Ajedrez ajedrez = Ajedrez.obtenerInstancia();
         try {
             ajedrez.CargarDatos();
             SuccessBox("Se han cargado los datos exitosamente", "");
@@ -4209,7 +4209,7 @@ public void asignarInicial() {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
-        Ajedrez ajedrez = Ajedrez.getInstancia();
+        Ajedrez ajedrez = Ajedrez.obtenerInstancia();
         ajedrez.GuardarDatos();
         SuccessBox("Se han guardado los datos con exito", "");
     }//GEN-LAST:event_jMenuItem2ActionPerformed
