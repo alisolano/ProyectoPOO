@@ -1,3 +1,13 @@
+/*
+ * Representa el tablero del juego.
+ * Contiene la lógica para inicializar el tablero, realizar movimientos,
+ * imprimir el tablero, cambiar el turno, gestionar capturas y promociones de peones.
+ * Se utiliza la interfaz Factory para crear instancias de las fichas.
+ * Se manejan listas separadas para diferentes tipos de fichas (peones, caballos) y para las capturas de cada equipo.
+ * Se verifica el tipo de ficha en varios métodos para realizar acciones específicas según el tipo de ficha.
+ * Se utilizan nombres de las fichas y coordenadas para identificarlas y realizar operaciones.
+*/
+
 package com.mycompany.proyecto01poo;
 
 import java.io.Serializable;
@@ -181,10 +191,7 @@ public class Tablero implements Serializable {
     public Ficha obtenerFichaEnCoordenada(int fila, int columna) {
         return tablero[fila][columna];
     }
-    
-    /*public void capturaRegular(int filaFinal, int casillaFinal){
-        if (ficha != null && esTurnoCorrecto(ficha)){
-    }*/
+   
     public boolean casillasIntermediasVacias(int filaInicial, int columnaInicial, int filaFinal, int columnaFinal) {
         Ficha ficha = obtenerFichaEnCoordenada(filaInicial, columnaInicial);
         if (!caballos.contains(ficha)){

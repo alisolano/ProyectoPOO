@@ -1,13 +1,11 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * Implementa la interfaz Factory para la creación de fichas de ajedrez.
+ * Proporciona métodos para crear diferentes tipos de fichas.
  */
+
 package com.mycompany.proyecto01poo;
 
-/**
- *
- * @author JP113
- */
+
 public class FichaFactory implements Factory {
     @Override
     public Ficha crearFichaPeon(String nombre) {

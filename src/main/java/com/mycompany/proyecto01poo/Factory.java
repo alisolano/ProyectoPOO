@@ -1,12 +1,11 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ * Interfaz que define métodos para la creación de instancias de diferentes fichas de ajedrez.
+ * Cada método crea y devuelve una instancia de la ficha correspondiente con el nombre especificado.
+ * Utilizada para aplicar el patrón de diseño Abstract Factory y permitir la creación de fichas sin especificar su clase concreta.
  */
+
 package com.mycompany.proyecto01poo;
-/**
- *
- * @author JP113
- */
+
 public interface Factory {
     Ficha crearFichaPeon(String nombre);
     

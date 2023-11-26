@@ -1,3 +1,9 @@
+/*
+ * Representa una ficha de caballo.
+ * Hereda de la clase Ficha e implementa sus métodos abstractos.
+ * Implementa la lógica de movimiento específica para el caballo en el método validarMovimiento.
+ */
+
 package com.mycompany.proyecto01poo;
 
 public class Caballo extends Ficha {

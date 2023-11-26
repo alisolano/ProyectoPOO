@@ -1,7 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+/**
+ * Clase controladora del juego de ajedrez.
+ * Gestiona el estado del juego, las interacciones entre el usuario y el tablero, y la lógica del juego. 
+ * Se utiliza el patrón Singleton para garantizar una única instancia de Ajedrez en el juego.
+ * La clase gestiona la interacción entre la lógica del juego y la interfaz gráfica (VistaTablero).
+ * Permite cargar y guardar el estado del juego para la persistencia de datos.
  */
+
 package com.mycompany.proyecto01poo;
 
 import java.awt.event.ActionEvent;
@@ -19,10 +23,6 @@ import javax.swing.JButton;
 import javax.swing.JLabel;
 
 
-/**
- *
- * @author JP113
- */
 public class Ajedrez {
     private static Ajedrez instancia = null;
 
@@ -190,16 +190,6 @@ public class Ajedrez {
         }
     }
 
-    public ArrayList<VistaTablero> getVistaTablero() {
-        return vistatablero;
-    }
-
-    public ArrayList<Tablero> getTablero() {
-        return Tablero;
-    }
-
-   
- 
     public void aplicarPromocionNegras(int filaFinal, int columnaFinal, int eleccion) {
         tablero.finalPromocionNegras(filaFinal, columnaFinal, eleccion, fichaFactory);
     }
@@ -219,9 +209,7 @@ public class Ajedrez {
         for(Tablero Tablero:this.Tablero){
             res+=Tablero.toString()+"\n";
         }
-        
-        
-        
+            
         return res;
         
     }

@@ -1,21 +1,15 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+* Interfaz grafica que representa la pantalla de inicio del juego, se pueden ingresar los nombres
+* de los jugadores.
+*/
 package GUI;
 
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 
-/**
- *
- * @author Alison
- */
+
 public class PantallaInicio extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Prueba
-     */
     public PantallaInicio() {
         initComponents();
         this.setSize(565,300);

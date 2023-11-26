@@ -1,3 +1,10 @@
+/*
+ * Representa una ficha de rey.
+ * Hereda de la clase Ficha e implementa sus métodos abstractos.
+ * Implementa la lógica de movimiento específica para el rey en el método validarMovimiento.
+ */
+
+
 package com.mycompany.proyecto01poo;
 
 public class Rey extends Ficha {

@@ -1,3 +1,10 @@
+/*
+ * Representa una ficha de reina.
+ * Hereda de la clase Ficha e implementa sus métodos abstractos.
+ * Implementa la lógica de movimiento específica para la reina en el método validarMovimiento.
+ */
+
+
 package com.mycompany.proyecto01poo;
 
 public class Reina extends Ficha { 

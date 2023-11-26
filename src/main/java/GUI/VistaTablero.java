@@ -1,7 +1,9 @@
 /*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
+* Interfaz grafica del juego de ajedrez. Utiliza jlabels para representar las fichas del juego mediante
+* imagenes que cambian segun se validan los movimientos y jugadas especiales.
+* Utiliza listas para registrar las fichas que se van capturando en el juego
+* Interactua unicamente con la clase controladoraa Ajedrez
+*/
 package GUI;
 
 import javax.swing.ImageIcon;
