@@ -10,9 +10,11 @@ package com.mycompany.proyecto01poo;
 public class Torre extends Ficha {
     
     private String nombre;
-    public Torre(String nombre) {
+    private int equipo;
+    public Torre(String nombre, int equipo) {
         super();
         this.nombre = nombre;
+        this.equipo = equipo;
     }
     
     @Override
@@ -26,5 +28,9 @@ public class Torre extends Ficha {
     
     public String getNombre() {
         return "Torre";
+    }
+
+    public int getEquipo() {
+        return equipo;
     }
 }

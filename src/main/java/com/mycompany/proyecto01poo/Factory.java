@@ -7,15 +7,15 @@
 package com.mycompany.proyecto01poo;
 
 public interface Factory {
-    Ficha crearFichaPeon(String nombre);
+    Ficha crearFichaPeon(String nombre, int equipo);
     
-    Ficha crearFichaTorre(String nombre);
+    Ficha crearFichaTorre(String nombre, int equipo);
     
-    Ficha crearFichaCaballo(String nombre);
+    Ficha crearFichaCaballo(String nombre, int equipo);
     
-    Ficha crearFichaAlfil(String nombre);
+    Ficha crearFichaAlfil(String nombre, int equipo);
     
-    Ficha crearFichaReina(String nombre);
+    Ficha crearFichaReina(String nombre, int equipo);
     
-    Ficha crearFichaRey(String nombre);
+    Ficha crearFichaRey(String nombre, int equipo);
 }

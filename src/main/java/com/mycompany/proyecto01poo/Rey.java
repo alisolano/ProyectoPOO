@@ -10,10 +10,11 @@ package com.mycompany.proyecto01poo;
 public class Rey extends Ficha {
     
     private String nombre;
-    
-    public Rey(String nombre) {
+    private int equipo;
+    public Rey(String nombre, int equipo) {
         super();
         this.nombre = nombre;
+        this.equipo = equipo;
     }
     
     @Override
@@ -27,6 +28,10 @@ public class Rey extends Ficha {
     
     public String getNombre() {
         return "Rey";
+    }
+    
+    public int getEquipo() {
+        return equipo;
     }
 }
 

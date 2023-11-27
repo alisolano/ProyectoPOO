@@ -9,9 +9,11 @@ package com.mycompany.proyecto01poo;
 public class Caballo extends Ficha {
     
     private String nombre;
-    public Caballo(String nombre) {
+    private int equipo;
+    public Caballo(String nombre, int equipo) {
         super();
         this.nombre = nombre;
+        this.equipo = equipo;
     }
     
     @Override
@@ -29,5 +31,9 @@ public class Caballo extends Ficha {
 
     public String getNombre() {
         return "Caballo";
+    }
+    
+    public int getEquipo() {
+        return equipo;
     }
 }

@@ -31,10 +31,6 @@ public class Ajedrez {
     }
     private Factory factory;
     private Tablero tablero;
-    private char turnoJugador = 'A';
-    private String posicionAntigua = null;
-    private String posicionNueva = null;
-    private String posicionActual;
     public static String fichaElegida;
     
     //instancias de tablero y factory para la generacion de tablero
@@ -74,6 +70,7 @@ public class Ajedrez {
         if (filaInicial == 7 && columnaInicial == 2 && filaFinal == 0 && columnaFinal == 4 ) {
             return false;
         }
+        
         else if (reyEnJaque(ficha)) {
         // Si el rey está en jaque, verifica si la ficha es el rey
         if (!"Rey".equals(ficha.getNombre())) {
@@ -240,6 +237,10 @@ public class Ajedrez {
 
     private boolean reyEnJaque(Ficha fichaMovida) {
         return tablero.estaEnJaque();
+    }
+    
+    public boolean comprobarJaqueMate() {
+        return tablero.estaEnJaqueMate();
     }
 
 }

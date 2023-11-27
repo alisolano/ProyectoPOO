@@ -14,6 +14,7 @@ public abstract class Ficha {
     
     public abstract String getRepresentation();
     public abstract String getNombre();
+    public abstract int getEquipo();
 }
 
 

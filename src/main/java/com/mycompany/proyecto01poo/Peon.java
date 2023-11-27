@@ -10,17 +10,20 @@ package com.mycompany.proyecto01poo;
 public class Peon extends Ficha {
     
     private String nombre;
-    
-    public Peon(String nombre) {
+    private int equipo;
+    public Peon(String nombre, int equipo) {
         super();
         this.nombre = nombre;
+        this.equipo = equipo;
     }
     
     
     @Override
-    public boolean validarMovimiento(int casillaInicial, int casillaFinal) {
+    public boolean validarMovimiento(int casillaInicial, int casillaFinal) {       
+        
        return Math.abs(casillaFinal - casillaInicial) % 8 == 0 &&
               Math.abs(casillaFinal - casillaInicial) < 17 ; 
+      
     }
     
     public String getRepresentation() {
@@ -30,8 +33,10 @@ public class Peon extends Ficha {
     public String getNombre() {
         return "Peon";
     }
-    
-    
+
+    public int getEquipo() {
+        return equipo;
+    }
 }
 
 
